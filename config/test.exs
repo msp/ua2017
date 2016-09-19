@@ -12,8 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :cenatus_ltd, CenatusLtd.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "cenatus-test",
   database: "cenatus_ltd_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

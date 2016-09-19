@@ -1,1 +1,19 @@
 /* This file is for your main application css. */
+
+article.preview {
+
+}
+
+article.preview h4 {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+article.preview .summary {
+  padding-bottom: 50px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}

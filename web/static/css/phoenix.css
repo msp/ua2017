@@ -31,36 +31,19 @@ form.link, form.button {
   height: 71px;
   display: inline-block;
   margin-bottom: 1em;
-  background-image: url("/images/phoenix.png");
+  /*background-image: url("/images/phoenix.png");*/
   background-size: 519px 71px;
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing {
-  padding-right: 15px;
-  padding-left: 15px;
+  font-size: 36px;
 }
 
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 940px;
   }
 }
 .container-narrow > hr {
   margin: 30px 0;
-}
-
-/* Main marketing message */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 35px 0;
 }
 
 /* Responsive: Portrait tablets and up */

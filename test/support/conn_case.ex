@@ -26,6 +26,7 @@ defmodule CenatusLtd.ConnCase do
       import Ecto.Query
 
       import CenatusLtd.Router.Helpers
+      import CenatusLtd.TestHelpers
 
       # The default endpoint for testing
       @endpoint CenatusLtd.Endpoint
