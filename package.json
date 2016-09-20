@@ -6,6 +6,8 @@
     "watch": "brunch watch --stdin"
   },
   "dependencies": {
+    "jquery": "3.1.0",
+    "cloudinary-jquery": "2.1.2",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html"
   },

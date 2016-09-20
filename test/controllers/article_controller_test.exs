@@ -27,9 +27,10 @@ defmodule CenatusLtd.ArticleControllerTest do
   end
 
   test "shows chosen resource", %{conn: conn} do
-    article = Repo.insert! %Article{}
+    changeset = Article.changeset(%Article{}, @valid_attrs)
+    article = Repo.insert! changeset
     conn = get conn, article_path(conn, :show, article)
-    assert html_response(conn, 200) =~ "Show article"
+    assert html_response(conn, 200) =~ article.title
   end
 
   test "renders page not found when id is nonexistent", %{conn: conn} do

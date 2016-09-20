@@ -32,6 +32,9 @@
       </main>
 
     </div> <!-- /container -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- <script src="<%= static_path(@conn, "/js/vendor.js") %>"></script> -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript">$.cloudinary.responsive()</script>
   </body>
 </html>

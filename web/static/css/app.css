@@ -17,3 +17,7 @@ article.preview .summary {
   padding-left: 50px;
   padding-right: 50px;
 }
+
+.col-md-6 {
+  border: 0px solid red;
+}

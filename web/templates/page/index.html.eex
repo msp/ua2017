@@ -2,7 +2,11 @@
   <%= for article <- @articles do %>
     <div class="col-md-6">
       <article class="preview">
-        <image src=<%= article.image_url %> />
+        <!-- responsive isnt quite fitting the grid -->
+        <!-- <image data-src='<%= article.image_url %>' class='cld-responsive' /> -->
+        <a href='<%= article_path(@conn, :show, article) %>'>
+          <image src='<%= article.image_url %>' />
+        </a>
         <h4><%= article.title %></h4>
         <div class='summary'><%= article.summary %></div>
         <div><a href='<%= article_path(@conn, :edit, article) %>'>edit</a></div>

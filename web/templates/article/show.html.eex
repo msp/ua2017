@@ -1,27 +1,16 @@
-<h2>Show article</h2>
+<h2><%= @article.title %></h2>
+
+<image src='<%= @article.image_url %>' />
+
+<br />
+<br />
+<br />
+
+<div>
+  <p><%= @article.content %></p>
+</div>
 
 <ul>
-
-  <li>
-    <strong>Title:</strong>
-    <%= @article.title %>
-  </li>
-
-  <li>
-    <strong>Summary:</strong>
-    <%= @article.summary %>
-  </li>
-
-  <li>
-    <strong>Content:</strong>
-    <%= @article.content %>
-  </li>
-
-  <li>
-    <strong>Image URL:</strong>
-    <%= @article.image_url %>
-  </li>
-
   <li>
     <strong>Published at:</strong>
     <%= @article.published_at %>
@@ -30,4 +19,5 @@
 </ul>
 
 <%= link "Edit", to: article_path(@conn, :edit, @article) %>
+ /
 <%= link "Back", to: article_path(@conn, :index) %>
