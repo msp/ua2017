@@ -2,9 +2,10 @@
   <%= for article <- @articles do %>
     <div class="col-md-6">
       <article class="preview">
-        <image src='/images/450x300.png' />
+        <image src=<%= article.image_url %> />
         <h4><%= article.title %></h4>
         <div class='summary'><%= article.summary %></div>
+        <div><a href='<%= article_path(@conn, :edit, article) %>'>edit</a></div>
       </article>
     </div>
   <% end %>

@@ -21,7 +21,7 @@
             <li><a href="/production">production</a></li>
           </ul>
         </nav>
-        <span class="logo">cenatus</span>
+        <span class="logo"><a href="/">cenatus</a></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

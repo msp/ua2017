@@ -18,6 +18,11 @@
   </li>
 
   <li>
+    <strong>Image URL:</strong>
+    <%= @article.image_url %>
+  </li>
+
+  <li>
     <strong>Published at:</strong>
     <%= @article.published_at %>
   </li>

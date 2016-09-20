@@ -6,6 +6,7 @@
       <th>Title</th>
       <th>Summary</th>
       <th>Content</th>
+      <th>Image URL</th>
       <th>Published at</th>
 
       <th></th>
@@ -17,6 +18,7 @@
       <td><%= article.title %></td>
       <td><%= article.summary %></td>
       <td><%= article.content %></td>
+      <td><%= article.image_url %></td>
       <td><%= article.published_at %></td>
 
       <td class="text-right">

@@ -4,7 +4,7 @@ defmodule CenatusLtd.ArticleTest do
   alias CenatusLtd.Article
 
   @valid_attrs %{content: "some content", published_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010},
-                 summary: "some summary", title: "some title"}
+                 summary: "some summary", title: "some title", image_url: "http://res.cloudinary.com/cenatus/image/upload/w_auto/millco-site_xs8rep.jpg"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
