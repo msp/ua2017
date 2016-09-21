@@ -1,0 +1,11 @@
+.row
+  - for article <- @articles do
+    .col-md-6
+      %article.preview
+        %script(src='#{static_path(@conn, "/js/app.js")}')
+        %a{href='#{article_path(@conn, :show, article)}'}
+          %image{src='#{article.image_url}'}
+        %h4= article.title
+        .summary= article.summary
+        %div
+          %a{href= '#{article_path(@conn, :edit, article)}'} edit
