@@ -5,11 +5,16 @@ article.preview {
 }
 
 article.preview h4 {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 50px;
   padding-right: 50px;
 }
+
+article.preview img{
+  width: 440px;
+}
+
 
 article.preview .summary {
   padding-bottom: 50px;
@@ -20,4 +25,11 @@ article.preview .summary {
 
 .col-md-6 {
   border: 0px solid red;
+}
+
+/* iPhone 6 Portrait */
+@media screen and (min-width : 375px) and (max-width : 667px) {
+  article.preview img{
+    width: 345px;
+  }
 }
