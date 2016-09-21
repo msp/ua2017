@@ -3,6 +3,12 @@
 $cenatus-blue: #6CA8DC;
 $cenatus-light-grey: #FAFBFC;
 
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  line-height: 23px;
+}
+
 .container {
   background-color: $cenatus-light-grey;
 }
