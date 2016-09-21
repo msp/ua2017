@@ -26,15 +26,6 @@ form.link, form.button {
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
-.logo {
-  width: 519px;
-  height: 71px;
-  display: inline-block;
-  margin-bottom: 1em;
-  /*background-image: url("/images/phoenix.png");*/
-  background-size: 519px 71px;
-  font-size: 36px;
-}
 
 /* Customize container */
 @media (min-width: 768px) {
@@ -57,9 +48,5 @@ form.link, form.button {
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }

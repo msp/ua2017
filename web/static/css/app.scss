@@ -1,35 +1,164 @@
 /* This file is for your main application css. */
 
+$cenatus-blue: #6CA8DC;
+$cenatus-light-grey: #FAFBFC;
+
+.container {
+  background-color: $cenatus-light-grey;
+}
+
+header {
+  .row {
+    .logo, .category {
+      display: flex;
+    	align-items: center;
+      justify-content: center;
+
+      background-color: $cenatus-blue;
+      height: 140px;
+      color: white;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 48px;
+      // line-height: 48px;
+    }
+
+    .category {
+      border-left: 1px solid white;
+    }
+
+    a {
+      color: white;
+      display: block;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
 article.preview {
+  h1, h2, h3, h4 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 
+  img{
+    width: 440px;
+  }
+
+  .summary {
+    padding-bottom: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
-article.preview h4 {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
+footer {
+  .row {
+    .address, .links {
+      display: flex;
+    	align-items: center;
+      background-color: $cenatus-blue;
+      height: 120px;
+      color: white;
+      padding-left: 70px;
+    }
 
-article.preview img{
-  width: 440px;
-}
+    .address {
+      padding-top: 20px;
+    }
 
+    a {
+      color: white;
+      display: block;
+      &:hover {
+        text-decoration: none;
+      }
+    }
 
-article.preview .summary {
-  padding-bottom: 50px;
-  padding-bottom: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
+    ul {
+      padding-left: 0px;
+    }
 
-.col-md-6 {
-  border: 0px solid red;
+    li {
+      list-style: none;
+      float: left;
+      padding-right: 10px;
+    }
+  }
 }
 
 /* iPhone 6 Portrait */
 @media screen and (min-width : 375px) and (max-width : 667px) {
+
+  header {
+    .row {
+      .logo {
+        height: 80px;
+      }
+      .category {
+        height: 40px;
+      }
+      .category:first-of-type {
+        border: 0px;
+      }
+    }
+  }
   article.preview img{
     width: 345px;
   }
+
+  footer {
+    .row {
+      .links {
+        height: 40px;
+        padding-bottom: 20px;
+      }
+    }
+  }
 }
+
+/* Effect 1: Brackets */
+.cl-effect-1 a::before,
+.cl-effect-1 a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1 a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.cl-effect-1 a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.cl-effect-1 a:hover::before,
+.cl-effect-1 a:hover::after,
+.cl-effect-1 a:focus::before,
+.cl-effect-1 a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+/* END Effect 1: Brackets */

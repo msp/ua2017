@@ -13,16 +13,15 @@
   %body
     .container
       %header.header
-        %nav{:role => "navigation"}
-          %ul.nav.nav-pills.pull-right
-            %li
-              %a{:href => "/creative"} creative
-            %li
-              %a{:href => "/web"} web
-            %li
-              %a{:href => "/production"} production
-        %span.logo
-          %a{:href => "/"} cenatus
+        .row
+          .col-md-6.logo.cl-effect-1
+            %a{:href => "/"} cenatus
+          .col-xs-4.col-md-2.category.cl-effect-1
+            %a{:href => "/creative"} creative
+          .col-xs-4.col-md-2.category.cl-effect-1
+            %a{:href => "/web"} web
+          .col-xs-4.col-md-2.category.cl-effect-1
+            %a{:href => "/production"} production
 
       %p.alert.alert-info(role="alert")= get_flash(@conn, :info)
       %p.alert.alert-danger(role="alert")= get_flash(@conn, :error)
@@ -30,7 +29,26 @@
       %main(role="main")
         = render @view_module, @view_template, assigns
 
+      %footer
+        .row
+          .col-xs-12.col-md-7.address
+            %address
+              cenatus ltd
+              %br
+              458 hackney road
+              %br
+              london
+              %br
+              e2 9eg
+          .col-xs-12.col-md-5.links
+            %ul
+              %li
+                %a{:href => "/about-us"} about-us
+              %li |
+              %li
+                %a{:href => "/contact"} contact
+              %li |
+              %li
+                %a{:href => "/subscribe"} subscribe
     %script{:src => "https://code.jquery.com/jquery-2.2.4.min.js"}
-    %script(src='#{static_path(@conn, "/js/app.js")}')
-    :javascript
-      //$.cloudinary.responsive()
+    -# %script(src='#{static_path(@conn, "/js/app.js")}')
