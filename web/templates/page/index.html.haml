@@ -4,7 +4,44 @@
       %article.preview
         %a{href='#{article_path(@conn, :show, article)}'}
           %image{src='#{article.image_url}'}
-        %h2= article.title
+        %h3= article.title
         .summary= article.summary
         %div
           %a{href= '#{article_path(@conn, :edit, article)}'} edit
+.row.meta
+  .col-md-4
+    %aside.twitter
+      %h4 said
+      %ul
+        %li
+          %a{href= '/'}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        %li
+          %a{href= '/'}
+            Lorem ipsum dolor sit amet
+        %li
+          %a{href= '/'}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  .col-md-4
+    %aside.last-fm
+      %h4 heard
+      %ul
+        %li patten — Out the Coast
+        %li Wire — wire - pink flag - 09 - surgeon's girl
+        %li Sun Ra — Velvet
+  .col-md-4
+    %aside.tags
+      %h4 meta
+      %ul
+        %li Lorem
+        %li ipsum
+        %li amet
+        %li Lorem
+        %li ipsum
+        %li amet
+        %li Lorem
+        %li ipsum
+        %li amet
+        %li Lorem
+        %li ipsum
+        %li amet

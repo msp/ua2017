@@ -20,14 +20,14 @@
           .col-xs-4.col-md-2.category.cl-effect-1
             %a{:href => "/creative"} creative
           .col-xs-4.col-md-2.category.cl-effect-1
-            %a{:href => "/web"} web
+            %a{:href => "/technology"} technology
           .col-xs-4.col-md-2.category.cl-effect-1
             %a{:href => "/production"} production
 
       %p.alert.alert-info(role="alert")= get_flash(@conn, :info)
       %p.alert.alert-danger(role="alert")= get_flash(@conn, :error)
 
-      %main(role="main")
+      %main(role="main" class='#{@view_template}')
         = render @view_module, @view_template, assigns
 
       %footer
@@ -44,7 +44,7 @@
           .col-xs-12.col-md-5.links
             %ul
               %li
-                %a{:href => "/about-us"} about-us
+                %a{:href => "/about-us"} about us
               %li |
               %li
                 %a{:href => "/contact"} contact

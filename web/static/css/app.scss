@@ -2,11 +2,19 @@
 
 $cenatus-blue: #6CA8DC;
 $cenatus-light-grey: #FAFBFC;
+$cenatus-light-blue: #BAD5ED;
+$cenatus-font-color: #4A4A4A;
 
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
-  line-height: 23px;
+  font-size: 14px;
+  line-height: 21px;
+  color: $cenatus-font-color;
+  font-weight: 100;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
 }
 
 .container {
@@ -66,6 +74,42 @@ article.preview {
     padding-bottom: 50px;
     padding-left: 50px;
     padding-right: 50px;
+  }
+}
+
+
+.meta {
+  background-color: $cenatus-light-blue;
+
+  a {
+    color: $cenatus-font-color;
+    display: block;
+    &:hover {
+      // text-decoration: none;
+      color: $cenatus-font-color;
+    }
+  }
+
+  aside {
+    padding: 20px;
+    // padding-left: 50px;
+    padding-right: 0px;
+    // font-size: smaller;
+
+    ul {
+      list-style: none;
+      margin-left: 0px;
+      padding-left: 0px;
+    }
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  .twitter {
+    border: 0px solid red;
+    padding-left: 50px;
   }
 }
 
