@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5 {
   background-color: $cenatus-light-grey;
 }
 
+.lp {
+  padding-left: 50px;
+}
+
 header {
   .row {
     .logo, .category {
@@ -54,11 +58,10 @@ header {
 }
 
 
-article.preview {
+article.preview, article.show {
   h1, h2, h3, h4 {
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 50px;
     padding-right: 50px;
     white-space: nowrap;
     overflow: hidden;
@@ -69,10 +72,9 @@ article.preview {
     width: 440px;
   }
 
-  .summary {
+  .summary, .content {
     padding-bottom: 50px;
     padding-bottom: 50px;
-    padding-left: 50px;
     padding-right: 50px;
   }
 }
@@ -91,7 +93,8 @@ article.preview {
   }
 
   aside {
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     // padding-left: 50px;
     padding-right: 0px;
     // font-size: smaller;
@@ -109,8 +112,57 @@ article.preview {
 
   .twitter {
     border: 0px solid red;
-    padding-left: 50px;
   }
+}
+
+.overlay {
+  top: 0px;
+  left: 0px;
+
+  position: absolute;
+  display: none;
+  // display: flex;
+  height: 100%;
+  width : 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  opacity: 0.7;
+
+  a {
+    font-size: xx-large;
+    color: white;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+  }
+}
+
+.hotspot {
+  &:hover {
+    // border: 1px solid red;
+    // background-color: black;
+    // opacity: 0.2;
+  }
+}
+
+.related {
+  padding-top: 30px;
+  ul {
+    list-style-type: square;
+    padding-left: 52px;
+  }
+}
+
+.debug {
+  border: 1px solid red;
+  color: blue;
+}
+
+textarea#article_content.form-control, textarea#article_summary.form-control {
+  height: 300px;
 }
 
 footer {
@@ -154,18 +206,23 @@ footer {
   header {
     .row {
       .logo {
+        padding-top: 30px;
         height: 80px;
       }
       .category {
-        height: 40px;
+        height: 30px;
       }
       .category:first-of-type {
         border: 0px;
       }
     }
   }
-  article.preview img{
+  article.preview img, article.show img{
     width: 345px;
+  }
+
+  .meta aside {
+    padding-left: 50px;
   }
 
   footer {

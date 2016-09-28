@@ -1,16 +1,20 @@
 .row
   - for article <- @articles do
     .col-md-6
-      %article.preview
-        %a{href='#{article_path(@conn, :show, article)}'}
+      .overlay{id='article-#{article.id}'}
+        %a.link{href='#{article_path(@conn, :show, article)}'}
+          view article
+      .hotspot
+        %article.preview
           %image{src='#{article.image_url}'}
-        %h3= article.title
-        .summary= article.summary
-        %div
-          %a{href= '#{article_path(@conn, :edit, article)}'} edit
+          -# %image{src='/images/placeholder.jpg'}
+          %h3.lp= article.title
+          .summary.lp= article.summary
+          %div
+            %a{href= '#{article_path(@conn, :edit, article)}'} edit
 .row.meta
   .col-md-4
-    %aside.twitter
+    %aside.twitter.lp
       %h4 said
       %ul
         %li

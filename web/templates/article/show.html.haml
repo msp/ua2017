@@ -1,0 +1,25 @@
+.row
+  .col-md-6
+    %article.show
+      -# %image{src='#{@article.image_url}'}
+      %image{src='/images/placeholder.jpg'}
+  .col-md-6.related
+    %h3.lp related articles
+    %ul
+      %li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      %li Lorem ipsum dolor sit amet
+      %li Lorem ipsum dolor sit amet, consectetur elit.
+      %li Lorem ipsum dolor sit amet, consectetur.
+      %li Lorem ipsum dolor sit amet, consectetur adipisicing.
+      %li Lorem ipsum dolor sit
+
+.row
+  .col-md-12
+    %article.show
+      %h3.lp= @article.title
+      %h4.lp= @article.published_at
+      .content.lp= @article.content
+    %div
+      %a{href= '#{article_path(@conn, :edit, @article)}'}
+        edit
+    %br
