@@ -10,7 +10,7 @@ defmodule CenatusLtd.ArticleController do
 
   def new(conn, _params) do
     changeset = Article.changeset(%Article{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, tags: [])
   end
 
   def create(conn, %{"article" => article_params}) do
@@ -22,23 +22,26 @@ defmodule CenatusLtd.ArticleController do
         |> put_flash(:info, "Article created successfully.")
         |> redirect(to: article_path(conn, :index))
       {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, tags: taglist_from(changeset.changes.tags))
     end
   end
 
   def show(conn, %{"id" => id}) do
     article = Repo.get!(Article, id)
+    article = Repo.preload(article, :tags)
     render(conn, "show.html", article: article)
   end
 
   def edit(conn, %{"id" => id}) do
     article = Repo.get!(Article, id)
+    article = Repo.preload(article, :tags)
     changeset = Article.changeset(article)
-    render(conn, "edit.html", article: article, changeset: changeset)
+    render(conn, "edit.html", article: article, changeset: changeset, tags: taglist_from(article.tags))
   end
 
   def update(conn, %{"id" => id, "article" => article_params}) do
     article = Repo.get!(Article, id)
+    article = Repo.preload(article, :tags)
     changeset = Article.changeset(article, article_params)
 
     case Repo.update(changeset) do
@@ -47,7 +50,7 @@ defmodule CenatusLtd.ArticleController do
         |> put_flash(:info, "Article updated successfully.")
         |> redirect(to: article_path(conn, :show, article))
       {:error, changeset} ->
-        render(conn, "edit.html", article: article, changeset: changeset)
+        render(conn, "edit.html", article: article, changeset: changeset, tags: taglist_from(article.tags))
     end
   end
 
@@ -61,5 +64,9 @@ defmodule CenatusLtd.ArticleController do
     conn
     |> put_flash(:info, "Article deleted successfully.")
     |> redirect(to: article_path(conn, :index))
+  end
+
+  defp taglist_from(tags) do
+    Enum.map(tags, fn(tag) -> tag.name end) |> Enum.join(",")
   end
 end

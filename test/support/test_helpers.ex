@@ -1,16 +1,17 @@
 defmodule CenatusLtd.TestHelpers do
   alias CenatusLtd.Repo
-  require Logger
+  alias CenatusLtd.Article
 
   def insert_article(attrs \\ %{}) do
       changes = Dict.merge(%{
-                      title: "a title",
-                      summary: "a summary",
-                      content: "a content",
-                      published_at: :calendar.universal_time(),
-                      }, attrs)
-      %CenatusLtd.Article{}
-      |> CenatusLtd.Article.changeset(changes)
-      |> Repo.insert!()
+                  "title" => "default title",
+                  "summary" => "default summary",
+                  "content" => "default content",
+                  "published_at" => :calendar.universal_time(),
+                  "tags" =>  ""
+                  }, attrs)
+
+      Article.changeset(%Article{}, changes)
+        |>  Repo.insert!
   end
 end

@@ -18,6 +18,10 @@ defmodule CenatusLtd.Router do
 
     get "/", PageController, :index
     resources "/articles", ArticleController
+    resources "/tags", TagController
+    get "/creative", PageController, :creative
+    get "/technology", PageController, :technology
+    get "/production", PageController, :production
   end
 
   # Other scopes may use custom stacks.

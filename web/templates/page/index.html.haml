@@ -1,13 +1,13 @@
 .row.articles
   - for article <- @articles do
     .col-md-6
-      .overlay{id='article-#{article.id}'}
-        %a.link{href='#{article_path(@conn, :show, article)}'}
-          view article
+      -# .overlay{id='article-#{article.id}'}
+      -#   %a.link{href='#{article_path(@conn, :show, article)}'}
+      -#     view article
       .hotspot
         %article.preview
-          %image{src='#{article.image_url}'}
-          -# %image{src='/images/placeholder.jpg'}
+          %a.link{href='#{article_path(@conn, :show, article)}'}
+            %image{src='#{article.image_url}'}
           %h4.lp= article.title
           .summary.lp= article.summary
           %div
@@ -30,18 +30,10 @@
     %aside.tags
       %h4 meta
       %ul
-        %li Lorem
-        %li ipsum
-        %li amet
-        %li Lorem
-        %li ipsum
-        %li amet
-        %li Lorem
-        %li ipsum
-        %li amet
-        %li Lorem
-        %li ipsum
-        %li amet
+        - for tag <- @tags do
+          %li
+            %a{href=  '#{tag_path(@conn, :show, tag)}'}
+              = tag.name
   .col-md-4
     %aside.last-fm
       %h4 heard

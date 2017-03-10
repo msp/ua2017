@@ -22,3 +22,8 @@ erl_crash.dump
 # secrets file as long as you replace its contents by environment
 # variables.
 /config/prod.secret.exs
+
+# test images
+web/static/assets/images/creative.jpg
+web/static/assets/images/technology.jpg
+web/static/assets/images/production.jpg

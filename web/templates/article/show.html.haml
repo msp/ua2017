@@ -18,6 +18,9 @@
       %h3.lp= @article.title
       %h4.lp= @article.published_at
       .content.lp= @article.content
+      %p.lp
+        Tags:
+        = Enum.map(@article.tags, fn(tag) -> tag.name end) |> Enum.join(", ")
     %div
       %a{href= '#{article_path(@conn, :edit, @article)}'}
         edit
