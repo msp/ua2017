@@ -40,9 +40,9 @@ defmodule CenatusLtd.ArticleControllerTest do
   end
 
   test "renders form for editing chosen resource", %{conn: conn} do
-    article = Repo.insert! %Article{}
+    article = Repo.insert! %Article{title: "testing edit form title"}
     conn = get conn, article_path(conn, :edit, article)
-    assert html_response(conn, 200) =~ "Edit article"
+    assert html_response(conn, 200) =~ article.title
   end
 
   test "updates chosen resource and redirects when data is valid", %{conn: conn} do
@@ -55,7 +55,7 @@ defmodule CenatusLtd.ArticleControllerTest do
   test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
     article = Repo.insert! %Article{}
     conn = put conn, article_path(conn, :update, article), article: @invalid_attrs
-    assert html_response(conn, 200) =~ "Edit article"
+    assert html_response(conn, 200) =~ "Oops, something went wrong! Please check the errors below"
   end
 
   test "deletes chosen resource", %{conn: conn} do
