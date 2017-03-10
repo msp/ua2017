@@ -1,4 +1,4 @@
-.row
+.row.articles
   - for article <- @articles do
     .col-md-6
       .overlay{id='article-#{article.id}'}
@@ -8,7 +8,7 @@
         %article.preview
           %image{src='#{article.image_url}'}
           -# %image{src='/images/placeholder.jpg'}
-          %h3.lp= article.title
+          %h4.lp= article.title
           .summary.lp= article.summary
           %div
             %a{href= '#{article_path(@conn, :edit, article)}'} edit
@@ -27,13 +27,6 @@
           %a{href= '/'}
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   .col-md-4
-    %aside.last-fm
-      %h4 heard
-      %ul
-        %li patten — Out the Coast
-        %li Wire — wire - pink flag - 09 - surgeon's girl
-        %li Sun Ra — Velvet
-  .col-md-4
     %aside.tags
       %h4 meta
       %ul
@@ -49,3 +42,10 @@
         %li Lorem
         %li ipsum
         %li amet
+  .col-md-4
+    %aside.last-fm
+      %h4 heard
+      %ul
+        %li patten — Out the Coast
+        %li Wire — wire - pink flag - 09 - surgeon's girl
+        %li Sun Ra — Velvet

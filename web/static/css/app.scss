@@ -4,43 +4,57 @@ $cenatus-blue: #6CA8DC;
 $cenatus-light-grey: #FAFBFC;
 $cenatus-light-blue: #BAD5ED;
 $cenatus-font-color: #4A4A4A;
+$cenatus-font-size:16px;
+$cenatus-line-height: 30px;
+
+@mixin divider {
+  border-bottom: 1px dashed $cenatus-light-blue;
+}
+
+@mixin divider-top {
+  border-top: 1px dashed $cenatus-light-blue;
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: $cenatus-font-size;
+  line-height: $cenatus-line-height;
   color: $cenatus-font-color;
   font-weight: 100;
 }
 
-h1, h2, h3, h4, h5 {
-  font-weight: bold;
-}
-
 .container {
-  background-color: $cenatus-light-grey;
+  h1, h2, h3, h4, h5 {
+    font-weight: bold;
+    color: $cenatus-blue;
+  }
+
 }
 
 .lp {
-  padding-left: 50px;
+  padding-left: 20px;
 }
 
 header {
+  @include divider
+
   .row {
     .logo, .category {
       display: flex;
     	align-items: center;
-      justify-content: center;
+      // justify-content: center;
 
-      background-color: $cenatus-blue;
       height: 140px;
-      color: white;
-      text-align: center;
+      color: $cenatus-blue;
+      // text-align: center;
     }
 
     .logo {
       font-size: 48px;
-      // line-height: 48px;
+      img {
+        height: 110px;
+        margin-left: -60px;
+      }
     }
 
     .category {
@@ -48,8 +62,10 @@ header {
     }
 
     a {
-      color: white;
+      color: $cenatus-blue;
       display: block;
+      font-size: 22px;
+      font-weight: 500;
       &:hover {
         text-decoration: none;
       }
@@ -57,6 +73,9 @@ header {
   }
 }
 
+.articles {
+  @include divider;
+}
 
 article.preview, article.show {
   h1, h2, h3, h4 {
@@ -69,7 +88,7 @@ article.preview, article.show {
   }
 
   img{
-    width: 440px;
+    width: 100%;
   }
 
   .summary, .content {
@@ -81,13 +100,13 @@ article.preview, article.show {
 
 
 .meta {
-  background-color: $cenatus-light-blue;
+  font-size: $cenatus-font-size - 2;
+  line-height: $cenatus-line-height - 5;
 
   a {
     color: $cenatus-font-color;
     display: block;
     &:hover {
-      // text-decoration: none;
       color: $cenatus-font-color;
     }
   }
@@ -95,19 +114,20 @@ article.preview, article.show {
   aside {
     padding-top: 20px;
     padding-bottom: 20px;
-    // padding-left: 50px;
     padding-right: 0px;
-    // font-size: smaller;
 
     ul {
-      list-style: none;
+      list-style-type: square;
       margin-left: 0px;
       padding-left: 0px;
     }
+  }
 
+  aside.tags {
     li {
       display: inline-block;
     }
+
   }
 
   .twitter {
@@ -167,13 +187,18 @@ textarea#article_content.form-control, textarea#article_summary.form-control {
 
 footer {
   .row {
+    @include divider-top;
+
     .address, .links {
       display: flex;
     	align-items: center;
-      background-color: $cenatus-blue;
       height: 120px;
-      color: white;
+      color: $cenatus-blue;
       padding-left: 70px;
+    }
+
+    .links {
+      padding-left: 20px;
     }
 
     .address {
@@ -181,7 +206,7 @@ footer {
     }
 
     a {
-      color: white;
+      color: $cenatus-blue;
       display: block;
       &:hover {
         text-decoration: none;
@@ -190,6 +215,7 @@ footer {
 
     ul {
       padding-left: 0px;
+      margin-top: 20px;
     }
 
     li {
@@ -205,12 +231,20 @@ footer {
 
   header {
     .row {
+      padding-top: 30px;
       .logo {
-        padding-top: 30px;
         height: 80px;
+
       }
       .category {
-        height: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        height: 60px;
+
+        a {
+            // font-size: 16px;
+        }
+
       }
       .category:first-of-type {
         border: 0px;
