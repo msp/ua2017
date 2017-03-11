@@ -29,6 +29,10 @@ body {
     color: $cenatus-blue;
   }
 
+  a {
+    color: $cenatus-light-blue;
+  }
+
 }
 
 .lp {
@@ -53,7 +57,7 @@ header {
       font-size: 48px;
       img {
         height: 110px;
-        margin-left: -60px;
+        margin-left: -30px;
       }
     }
 
@@ -105,7 +109,6 @@ article.preview, article.show {
 
   a {
     color: $cenatus-font-color;
-    display: block;
     &:hover {
       color: $cenatus-font-color;
     }
@@ -119,7 +122,7 @@ article.preview, article.show {
     ul {
       list-style-type: square;
       margin-left: 0px;
-      padding-left: 0px;
+      padding-left: 16px;
     }
   }
 
@@ -127,7 +130,6 @@ article.preview, article.show {
     li {
       display: inline-block;
     }
-
   }
 
   .twitter {
@@ -172,13 +174,20 @@ article.preview, article.show {
   padding-top: 30px;
   ul {
     list-style-type: square;
-    padding-left: 52px;
   }
 }
 
 .debug {
   border: 1px solid red;
   color: blue;
+}
+
+.tag:before {
+  content: ", "
+}
+
+.tag:first-of-type:before {
+  content: ""
 }
 
 textarea#article_content.form-control, textarea#article_summary.form-control {
@@ -194,7 +203,7 @@ footer {
     	align-items: center;
       height: 120px;
       color: $cenatus-blue;
-      padding-left: 70px;
+      padding-left: 32px;
     }
 
     .links {
@@ -202,7 +211,7 @@ footer {
     }
 
     .address {
-      padding-top: 20px;
+      padding-top: 48px;
     }
 
     a {
@@ -234,7 +243,6 @@ footer {
       padding-top: 30px;
       .logo {
         height: 80px;
-
       }
       .category {
         padding-top: 20px;

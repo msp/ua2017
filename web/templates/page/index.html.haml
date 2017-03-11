@@ -29,11 +29,8 @@
   .col-md-4
     %aside.tags
       %h4 meta
-      %ul
-        - for tag <- @tags do
-          %li
-            %a{href=  '#{tag_path(@conn, :show, tag)}'}
-              = tag.name
+      = CenatusLtd.ArticleView.render_tags_as_links_from(@conn, @tags)
+      
   .col-md-4
     %aside.last-fm
       %h4 heard
