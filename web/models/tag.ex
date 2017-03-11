@@ -4,6 +4,8 @@ defmodule CenatusLtd.Tag do
   schema "tags" do
     field :name, :string
 
+    many_to_many :articles, CenatusLtd.Article, join_through: "article_tags", on_delete: :delete_all, on_replace: :delete
+
     timestamps()
   end
 

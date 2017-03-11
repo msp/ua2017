@@ -67,6 +67,7 @@ defmodule CenatusLtd.ArticleController do
   end
 
   defp taglist_from(tags) do
-    Enum.map(tags, fn(tag) -> tag.name end) |> Enum.join(",")
+    Enum.map(tags, fn(tag) -> tag.name end)
+      |> Enum.join(",")
   end
 end
