@@ -9,8 +9,7 @@ defmodule CenatusLtd.PageController do
   plug :load_all_tags
 
 
-  def index(conn, _params) do
-
+  def home(conn, _params) do
     articles = Repo.all(from article in Article,
                       limit: 2,
                       order_by: [desc: article.published_at])
@@ -30,6 +29,11 @@ defmodule CenatusLtd.PageController do
 
   def production(conn, _params) do
     articles = get_articles_tagged_by("production")
+    render(conn, "index.html", articles: articles)
+  end
+
+  def people(conn, _params) do
+    articles = get_articles_tagged_by("person")
     render(conn, "index.html", articles: articles)
   end
 

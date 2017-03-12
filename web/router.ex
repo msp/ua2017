@@ -16,12 +16,16 @@ defmodule CenatusLtd.Router do
   scope "/", CenatusLtd do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
-    resources "/articles", ArticleController
-    resources "/tags", TagController
+    get "/", PageController, :home
+
     get "/creative", PageController, :creative
     get "/technology", PageController, :technology
     get "/production", PageController, :production
+
+    get "/people", PageController, :people
+
+    resources "/articles", ArticleController
+    resources "/tags", TagController
   end
 
   # Other scopes may use custom stacks.
