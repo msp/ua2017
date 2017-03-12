@@ -11,7 +11,7 @@
     %link(href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet")
     %link(rel="stylesheet" href='#{static_path(@conn, "/css/app.css")}')
 
-  %body
+  %body(class='#{CenatusLtd.PageView.handler_info @conn}')
     .container
       %header.header
         .row
@@ -28,7 +28,7 @@
       %p.alert.alert-info(role="alert")= get_flash(@conn, :info)
       %p.alert.alert-danger(role="alert")= get_flash(@conn, :error)
 
-      %main(role="main" class='#{@view_template}')
+      %main(role="main")
         = render @view_module, @view_template, assigns
 
       %footer
@@ -52,4 +52,5 @@
               %li |
               %li
                 %a{:href => "/subscribe"} subscribe
+    %script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js')
     %script(src='#{static_path(@conn, "/js/app.js")}')
