@@ -5,12 +5,10 @@
   .col-md-6.related
     %h3.lp related articles
     %ul
-      %li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      %li Lorem ipsum dolor sit amet
-      %li Lorem ipsum dolor sit amet, consectetur elit.
-      %li Lorem ipsum dolor sit amet, consectetur.
-      %li Lorem ipsum dolor sit amet, consectetur adipisicing.
-      %li Lorem ipsum dolor sit
+      - for related <- @related do
+        %li
+          -# %a.link{href='/articles/#{related.id}'}= related.title
+          = related.title
 
 .row
   .col-md-12
