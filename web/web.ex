@@ -36,6 +36,7 @@ defmodule CenatusLtd.Web do
 
       import CenatusLtd.Router.Helpers
       import CenatusLtd.Gettext
+      import CenatusLtd.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -47,7 +48,7 @@ defmodule CenatusLtd.Web do
       import Phoenix.Controller, only: [get_csrf_token: 0,
                                         get_flash: 2,
                                         view_module: 1,
-                                        action_name: 1, 
+                                        action_name: 1,
                                         controller_module: 1]
 
       # Use all HTML functionality (forms, tags, etc)
@@ -62,6 +63,8 @@ defmodule CenatusLtd.Web do
   def router do
     quote do
       use Phoenix.Router
+
+      import CenatusLtd.Auth, only: [authenticate_user: 2]
     end
   end
 

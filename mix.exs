@@ -19,7 +19,7 @@ defmodule CenatusLtd.Mixfile do
   def application do
     [mod: {CenatusLtd, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,7 +38,9 @@ defmodule CenatusLtd.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:phoenix_haml, "~> 0.2.1"}]
+     {:phoenix_haml, "~> 0.2.1"},
+     {:comeonin, "~> 2.0"}
+   ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

@@ -37,6 +37,10 @@ defmodule CenatusLtd.PageController do
     render(conn, "index.html", articles: articles)
   end
 
+  def admin(conn, _params) do
+    render(conn, "admin.html")
+  end
+
   defp get_articles_tagged_by(tag_name) do
     Repo.all(
       from a in Article,

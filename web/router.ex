@@ -7,6 +7,7 @@ defmodule CenatusLtd.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug CenatusLtd.Auth, repo: CenatusLtd.Repo
   end
 
   pipeline :api do
@@ -17,6 +18,8 @@ defmodule CenatusLtd.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :home
+    get "/login", SessionController, :new
+
 
     get "/creative", PageController, :creative
     get "/technology", PageController, :technology
@@ -24,9 +27,19 @@ defmodule CenatusLtd.Router do
 
     get "/people", PageController, :people
 
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
+  end
+
+  scope "/admin", CenatusLtd do
+    pipe_through [:browser, :authenticate_user]
+
+    get "/", PageController, :admin
+
     resources "/articles", ArticleController
     resources "/tags", TagController
+    resources "/users", UserController
   end
+
 
   # Other scopes may use custom stacks.
   # scope "/api", CenatusLtd do
