@@ -3,16 +3,30 @@ defmodule CenatusLtd.UserTest do
 
   alias CenatusLtd.User
 
-  @valid_attrs %{name: "some content", password_hash: "some content", username: "some content"}
+  @valid_attrs %{name: "test-user", username: "test-username", password: "passw0rd"}
   @invalid_attrs %{}
 
-  test "changeset with valid attributes" do
-    changeset = User.changeset(%User{}, @valid_attrs)
-    assert changeset.valid?
+  describe "default changeset: " do
+    test "with valid attributes" do
+      changeset = User.changeset(%User{}, @valid_attrs)
+      assert changeset.valid?
+    end
+
+    test "with invalid attributes" do
+      changeset = User.changeset(%User{}, @invalid_attrs)
+      refute changeset.valid?
+    end
   end
 
-  test "changeset with invalid attributes" do
-    changeset = User.changeset(%User{}, @invalid_attrs)
-    refute changeset.valid?
+  describe "registration changeset: " do
+    test "with valid attributes" do
+      changeset = User.changeset(%User{}, @valid_attrs)
+      assert changeset.valid?
+    end
+
+    test "with invalid attributes" do
+      changeset = User.changeset(%User{}, @invalid_attrs)
+      refute changeset.valid?
+    end
   end
 end

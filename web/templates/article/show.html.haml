@@ -20,7 +20,8 @@
         Filed as:
         = render_tags_as_links_from(@conn, @article.tags)
 
-    %div
-      %a{href= '#{article_path(@conn, :edit, @article)}'}
-        edit
+    - if @current_user do
+      %div
+        %a{href= '#{article_path(@conn, :edit, @article)}'}
+          edit
     %br

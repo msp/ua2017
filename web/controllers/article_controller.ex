@@ -27,17 +27,23 @@ defmodule CenatusLtd.ArticleController do
   end
 
   def show(conn, %{"id" => id}) do
-    article = Repo.get!(Article, id)
-    article = Repo.preload(article, :tags)
+    main_article = Repo.get!(Article, id)
+    main_article = Repo.preload(main_article, :tags)
 
     # TODO - some smarter SQL
     # TODO - remove self article
     # TODO - why can't we render link from ID?
-    related = Enum.at(article.tags, 0)
-    related = Repo.preload(related, :articles)
-    related = related.articles || []
+    related_tags = Enum.at(main_article.tags, 0)
+    related_tags = Repo.preload(related_tags, :articles)
 
-    render(conn, "show.html", article: article, related: related)
+    related_articles =
+      if related_tags do
+        Enum.reject(related_tags.articles, fn(a) -> a.id == main_article.id end)
+      else
+        []
+      end
+
+    render(conn, "show.html", article: main_article, related: related_articles)
   end
 
   def edit(conn, %{"id" => id}) do

@@ -27,7 +27,7 @@ defmodule CenatusLtd.Article do
   end
 
   defp parse_tags(params)  do
-    (params["tags"] || "")
+    (params["tags"] || params[:tags] || "")
       |> String.split(",")
       |> Enum.map(&String.trim/1)
       |> Enum.map(&String.downcase/1)

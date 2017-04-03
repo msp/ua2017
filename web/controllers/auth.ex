@@ -53,7 +53,7 @@ defmodule CenatusLtd.Auth do
     else
       conn
       |> put_flash(:error, "You must be logged in to access that page")
-      |> redirect(to: Helpers.page_path(conn, :home))
+      |> redirect(to: "/login")
       |> halt()
     end
   end

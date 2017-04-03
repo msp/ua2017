@@ -27,6 +27,8 @@ defmodule CenatusLtd.Router do
 
     get "/people", PageController, :people
 
+    resources "/articles", ArticleController, only: [:show]
+    resources "/tags", TagController, only: [:show]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
@@ -35,8 +37,8 @@ defmodule CenatusLtd.Router do
 
     get "/", PageController, :admin
 
-    resources "/articles", ArticleController
-    resources "/tags", TagController
+    resources "/articles", ArticleController, except: [:show]
+    resources "/tags", TagController, except: [:show]
     resources "/users", UserController
   end
 
