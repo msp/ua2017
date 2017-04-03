@@ -81,8 +81,8 @@ header {
   @include divider;
 }
 
-article.preview, article.show {
-  h1, h2, h3, h4 {
+article.preview, article.show, main {
+  h1, h2, h3, h4, .tag_page_title {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 50px;
@@ -197,6 +197,7 @@ textarea#article_content.form-control, textarea#article_summary.form-control {
 footer {
   .row {
     @include divider-top;
+    padding-bottom: 20px;
 
     .address, .links {
       display: flex;

@@ -60,9 +60,12 @@ defmodule CenatusLtd.TagControllerTest do
 
   describe "public routes" do
     test "shows chosen resource", %{conn: conn} do
-      tag = Repo.insert! %Tag{}
-      conn = get conn, tag_path(conn, :show, tag)
-      assert html_response(conn, 200) =~ "Show tag"
+      attrs =  %{title: "some title", summary: "some content", content: "some content", published_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}}
+      changeset = CenatusLtd.Article.changeset(%CenatusLtd.Article{}, Map.merge(attrs, %{tags: "creative"}))
+      article = Repo.insert! changeset
+
+      conn = get conn, tag_path(conn, :show, Enum.at(article.tags, 0))
+      assert html_response(conn, 200) =~ "''"
     end
 
     test "renders page not found when id is nonexistent", %{conn: conn} do

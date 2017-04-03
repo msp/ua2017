@@ -7,8 +7,8 @@
     %ul
       - for related <- @related do
         %li
-          -# %a.link{href='/articles/#{related.id}'}= related.title
-          = related.title
+          %a{href='/articles/#{related.id}'}
+            = related.title
 
 .row
   .col-md-12

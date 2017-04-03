@@ -1,3 +1,4 @@
+= render_page_title(@conn)
 .row.articles
   - for article <- @articles do
     .col-md-6
@@ -30,7 +31,7 @@
     %aside.tags
       %h4 meta
       = CenatusLtd.ArticleView.render_tags_as_links_from(@conn, @tags)
-      
+
   .col-md-4
     %aside.last-fm
       %h4 heard

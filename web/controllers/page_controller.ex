@@ -8,33 +8,32 @@ defmodule CenatusLtd.PageController do
 
   plug :load_all_tags
 
-
   def home(conn, _params) do
     articles = Repo.all(from article in Article,
                       limit: 2,
                       order_by: [desc: article.published_at])
 
-    render(conn, "index.html", articles: articles)
+    render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 
   def creative(conn, _params) do
     articles = get_articles_tagged_by("creative")
-    render(conn, "index.html", articles: articles)
+    render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 
   def technology(conn, _params) do
     articles = get_articles_tagged_by("technology")
-    render(conn, "index.html", articles: articles)
+    render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 
   def production(conn, _params) do
     articles = get_articles_tagged_by("production")
-    render(conn, "index.html", articles: articles)
+    render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 
   def people(conn, _params) do
     articles = get_articles_tagged_by("person")
-    render(conn, "index.html", articles: articles)
+    render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 
   def admin(conn, _params) do

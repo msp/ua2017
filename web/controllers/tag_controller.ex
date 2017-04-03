@@ -3,6 +3,8 @@ defmodule CenatusLtd.TagController do
 
   alias CenatusLtd.Tag
 
+  plug :load_all_tags
+
   def index(conn, _params) do
     tags = Repo.all(Tag)
     render(conn, "index.html", tags: tags)
@@ -27,8 +29,8 @@ defmodule CenatusLtd.TagController do
   end
 
   def show(conn, %{"id" => id}) do
-    tag = Repo.get!(Tag, id)
-    render(conn, "show.html", tag: tag)
+    tag = Repo.get!(Tag, id) |> Repo.preload(:articles)
+    render(conn, CenatusLtd.SharedView, "articles.html", articles: tag.articles, page_title: "'#{tag.name}' articles")
   end
 
   def edit(conn, %{"id" => id}) do
@@ -61,5 +63,9 @@ defmodule CenatusLtd.TagController do
     conn
     |> put_flash(:info, "Tag deleted successfully.")
     |> redirect(to: tag_path(conn, :index))
+  end
+
+  defp load_all_tags(conn, _) do
+    assign(conn, :tags, Repo.all(Tag))
   end
 end

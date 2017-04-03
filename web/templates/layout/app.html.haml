@@ -52,10 +52,14 @@
               %li |
               %li
                 %a{:href => "/subscribe"} subscribe
-              - if @current_user do
-                %li |
-                %li
-                  = link "log out", to: session_path(@conn, :delete, @current_user), method: "delete"
+        .row
+          - if @current_user do
+            %ul
+              %li
+                = link "admin", to: page_path(@conn, :admin)
+              %li |
+              %li
+                = link "log out", to: session_path(@conn, :delete, @current_user), method: "delete"
 
     %script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js')
     %script(src='#{static_path(@conn, "/js/app.js")}')
