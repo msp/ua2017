@@ -45,7 +45,8 @@ defmodule CenatusLtd.PageController do
       from a in Article,
       join: t in assoc(a, :tags),
       preload: [tags: t],
-      where: t.name in ^[tag_name]
+      where: t.name in ^[tag_name],
+      order_by: [desc: a.published_at]
     )
   end
 
