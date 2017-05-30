@@ -320,7 +320,7 @@ footer {
 /* Effect 1: Brackets */
 .cl-effect-1 a::before,
 .cl-effect-1 a::after {
-	display: inline-block;
+	// display: inline-block;
 	opacity: 0;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
 	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
