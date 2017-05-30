@@ -38,7 +38,7 @@
   <div class="form-group">
     <%= label f, :tags, class: "control-label" %>
 
-    <input class="form-control" id="article_tags" name="article[tags]" type="text" value= <%= @tags %>>
+    <input class="form-control" id="article_tags" name="article[tags]" type="text" value="<%= @tags %>">
 
     <%= error_tag f, :tags %>
   </div>
@@ -46,7 +46,7 @@
   <div class="form-group">
     <%= label f, :tech_tags, class: "control-label" %>
 
-    <input class="form-control" id="article_tech_tags" name="article[tech_tags]" type="text" value= <%= @tech_tags %>>
+    <input class="form-control" id="article_tech_tags" name="article[tech_tags]" type="text" value="<%= @tech_tags %>">
 
     <%= error_tag f, :tags %>
   </div>

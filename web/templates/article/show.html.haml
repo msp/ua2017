@@ -13,7 +13,12 @@
 .row
   .col-md-12
     %article.show
-      %h3.lp= @article.title
+      %h3.lp
+        = @article.title
+        - if @current_user do
+          %a.smaller{href= '#{article_path(@conn, :edit, @article)}'}
+            [edit]
+
       %h4.lp= @article.published_at |> formatted
       .content.lp= @article.content |> as_html
       - if length(@article.tags) > 0 do
@@ -24,11 +29,6 @@
         %p.lp
           Built using:
           = render_tags_as_links_from(@conn, @article.tech_tags)
-
-    - if @current_user do
-      %div
-        %a{href= '#{article_path(@conn, :edit, @article)}'}
-          edit
     %br
 
 

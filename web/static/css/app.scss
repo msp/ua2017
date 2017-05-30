@@ -35,7 +35,12 @@ body {
   }
 
   a {
-    color: $cenatus-light-blue;
+    color: $cenatus-blue;
+
+    &:hover {
+      color: #498CC8;
+      font-weight: bold;
+    }
   }
 }
 
@@ -49,6 +54,10 @@ body {
 
 .bold {
   font-weight: bold;
+}
+
+.smaller {
+  font-size: smaller;
 }
 
 header {

@@ -84,7 +84,7 @@ defmodule CenatusLtd.ArticleController do
       {:error, changeset} ->
         render(conn, "edit.html", article: article, changeset: changeset,
           tags: taglist_from(article.tags),
-          tech_tags: taglist_from(article.techs_tags))
+          tech_tags: taglist_from(article.tech_tags))
     end
   end
 
@@ -102,6 +102,6 @@ defmodule CenatusLtd.ArticleController do
 
   defp taglist_from(tags) do
     Enum.map(tags, fn(tag) -> tag.name end)
-      |> Enum.join(",")
+      |> Enum.join(", ")
   end
 end
