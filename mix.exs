@@ -40,7 +40,9 @@ defmodule CenatusLtd.Mixfile do
      {:cowboy, "~> 1.0"},
      {:phoenix_haml, "~> 0.2.1"},
      {:comeonin, "~> 2.0"},
-     {:mix_test_watch, "~> 0.3", only: :dev, runtime: false}
+     {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
+     {:earmark, "~> 1.2.2"},
+     {:timex, "~> 3.0"}
    ]
   end
 

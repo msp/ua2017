@@ -14,8 +14,8 @@
   .col-md-12
     %article.show
       %h3.lp= @article.title
-      %h4.lp= @article.published_at
-      .content.lp= @article.content
+      %h4.lp= @article.published_at |> formatted
+      .content.lp= @article.content |> as_html
       - if length(@article.tags) > 0 do
         %p.lp.nbm
           Filed as:

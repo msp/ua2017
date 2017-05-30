@@ -10,7 +10,7 @@
           %a.link{href='#{article_path(@conn, :show, article)}'}
             %image{src='#{article.image_url}'}
           %h4.lp= article.title
-          .summary.lp= article.summary
+          .summary.lp= article.summary |> as_html
           %div
             %a{href= '#{article_path(@conn, :edit, article)}'} edit
 .row.meta

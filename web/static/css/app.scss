@@ -32,7 +32,6 @@ body {
   a {
     color: $cenatus-light-blue;
   }
-
 }
 
 .lp {
@@ -41,6 +40,10 @@ body {
 
 .nbm {
   margin-bottom: 0px;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 header {
@@ -81,6 +84,20 @@ header {
   }
 }
 
+
+table.articles {
+  tr.heading {
+    background-color: #ccc;
+  }
+
+  tr.body {
+    margin-bottom: 100px;
+  }
+
+  .image {
+    width: 30%;
+  }
+}
 .articles {
   @include divider;
 }

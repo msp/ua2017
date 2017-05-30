@@ -1,34 +1,42 @@
 <h2>Listing articles</h2>
 
-<table class="table">
+<table class="articles table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Summary</th>
-      <th>Content</th>
-      <th>Tags</th>
-      <th>Tech</th>
-      <th>Image URL</th>
-      <th>Published at</th>
-
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
     </tr>
   </thead>
   <tbody>
 <%= for article <- @articles do %>
-    <tr>
-      <td><%= article.title %></td>
-      <td title="<%= article.summary %>" ><%= String.slice(article.summary, 0..250) %></td>
-      <td title="<%= article.content %>" ><%= String.slice(article.content, 0..250) %></td>
-      <td><%= tags_list(article.tags) %></td>
-      <td><%= tags_list(article.tech_tags) %></td>
-      <td><%= article.image_url %></td>
-      <td><%= article.published_at %></td>
-
-      <td class="text-right">
+    <tr class="heading">
+      <td colspan="2">
+          <span class="bold"><%= article.title %></span>
+      </td>
+      <td colspan="1">
+          <span class="bold"><%= formatted(article.published_at) %></span>
+      </td>
+      <td class="actions text-right" colspan="1">
         <%= link "Show", to: article_path(@conn, :show, article), class: "btn btn-default btn-xs" %>
         <%= link "Edit", to: article_path(@conn, :edit, article), class: "btn btn-default btn-xs" %>
         <%= link "Delete", to: article_path(@conn, :delete, article), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+    <tr clasS="body">
+      <td class="image">
+        <img src='<%= article.image_url %>' />
+      </td>
+      <td title="<%= article.summary %>" >
+        <%= String.slice(article.summary, 0..250) %>
+      </td>
+      <td title="<%= article.content %>" ><%= String.slice(article.content, 0..250) %></td>
+      <td>
+        <%= tags_list(article.tags) %>
+        <br/><br/><br/>
+        <%= tags_list(article.tech_tags) %>
       </td>
     </tr>
 <% end %>

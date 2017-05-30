@@ -57,6 +57,7 @@ defmodule CenatusLtd.Web do
       import CenatusLtd.Router.Helpers
       import CenatusLtd.ErrorHelpers
       import CenatusLtd.Gettext
+      import CenatusLtd.SharedFormatters
     end
   end
 
