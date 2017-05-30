@@ -29,8 +29,11 @@ defmodule CenatusLtd.TagController do
   end
 
   def show(conn, %{"id" => id}) do
-    tag = Repo.get!(Tag, id) |> Repo.preload(:articles)
-    render(conn, CenatusLtd.SharedView, "articles.html", articles: tag.articles, page_title: "'#{tag.name}' articles")
+    tag = Repo.get!(Tag, id)
+    |> Repo.preload(:articles)
+    |> Repo.preload(:tech_articles)
+
+    render(conn, CenatusLtd.SharedView, "articles.html", articles: tag.articles ++ tag.tech_articles, page_title: "'#{tag.name}' articles")
   end
 
   def edit(conn, %{"id" => id}) do

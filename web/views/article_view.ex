@@ -11,4 +11,9 @@ defmodule CenatusLtd.ArticleView do
 
     Enum.map(tags, tag_as_link)
   end
+
+  def tags_list(tags) do
+    Enum.map(tags, fn(tag) -> tag.name end)
+      |> Enum.join(",")
+  end
 end

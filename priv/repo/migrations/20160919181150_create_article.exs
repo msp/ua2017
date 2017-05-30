@@ -6,7 +6,7 @@ defmodule CenatusLtd.Repo.Migrations.CreateArticle do
       add :title, :string
       add :summary, :text
       add :content, :text
-      add :published_at, :datetime
+      add :published_at, :utc_datetime
 
       timestamps()
     end

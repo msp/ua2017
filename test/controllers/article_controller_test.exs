@@ -3,9 +3,10 @@ defmodule CenatusLtd.ArticleControllerTest do
 
   alias CenatusLtd.Article
 
-  @valid_attrs %{title: "some content", summary: "some content", content: "some content", published_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}}
-  @invalid_attrs %{}
+  @valid_attrs %{title: "some content", summary: "some content", content: "some content",
+                 published_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}}
 
+  @invalid_attrs %{}
 
   describe "authorized routes" do
     setup %{conn: conn} do

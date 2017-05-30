@@ -3,7 +3,7 @@ defmodule CenatusLtd.TestHelpers do
   alias CenatusLtd.Article
 
   def insert_article(attrs \\ %{}) do
-      changes = Dict.merge(%{
+      changes = Map.merge(%{
                   "title" => "default title",
                   "summary" => "default summary",
                   "content" => "default content",

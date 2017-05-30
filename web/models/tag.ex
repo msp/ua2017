@@ -5,6 +5,7 @@ defmodule CenatusLtd.Tag do
     field :name, :string
 
     many_to_many :articles, CenatusLtd.Article, join_through: "article_tags", on_delete: :delete_all, on_replace: :delete
+    many_to_many :tech_articles, CenatusLtd.Article, join_through: "article_tech_tags", on_delete: :delete_all, on_replace: :delete
 
     timestamps()
   end

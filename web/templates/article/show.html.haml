@@ -16,9 +16,14 @@
       %h3.lp= @article.title
       %h4.lp= @article.published_at
       .content.lp= @article.content
-      %p.lp
-        Filed as:
-        = render_tags_as_links_from(@conn, @article.tags)
+      - if length(@article.tags) > 0 do
+        %p.lp.nbm
+          Filed as:
+          = render_tags_as_links_from(@conn, @article.tags)
+      - if length(@article.tech_tags) > 0 do
+        %p.lp
+          Built using:
+          = render_tags_as_links_from(@conn, @article.tech_tags)
 
     - if @current_user do
       %div

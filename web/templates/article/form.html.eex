@@ -44,6 +44,14 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :tech_tags, class: "control-label" %>
+
+    <input class="form-control" id="article_tech_tags" name="article[tech_tags]" type="text" value= <%= @tech_tags %>>
+
+    <%= error_tag f, :tags %>
+  </div>
+
+  <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -6,6 +6,8 @@
       <th>Title</th>
       <th>Summary</th>
       <th>Content</th>
+      <th>Tags</th>
+      <th>Tech</th>
       <th>Image URL</th>
       <th>Published at</th>
 
@@ -16,8 +18,10 @@
 <%= for article <- @articles do %>
     <tr>
       <td><%= article.title %></td>
-      <td><%= article.summary %></td>
-      <td><%= article.content %></td>
+      <td title="<%= article.summary %>" ><%= String.slice(article.summary, 0..250) %></td>
+      <td title="<%= article.content %>" ><%= String.slice(article.content, 0..250) %></td>
+      <td><%= tags_list(article.tags) %></td>
+      <td><%= tags_list(article.tech_tags) %></td>
       <td><%= article.image_url %></td>
       <td><%= article.published_at %></td>
 
