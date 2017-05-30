@@ -1,20 +1,55 @@
-# CenatusLtd
+# Cenatus
 
-To start your Phoenix app:
+http://cenatus.org
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `npm install`
-  * Start Phoenix endpoint with `mix phoenix.server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Local setup
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+```bash
+# get src & libs
+$ git clone https://github.com/msp/cenatus-ltd.git
+$ cd cenatus-ltd && mix deps.get
+
+# create and migrate your database
+$ mix ecto.create && mix ecto.migrate
+
+# install Node.js dependencies for UI
+$ npm install
+
+# start Phoenix endpoint
+$ mix phoenix.server
+```
+Visit [`localhost:4000`](http://localhost:4000) in your browser.
+
+## Test / Develop
+
+```bash
+# local test guard
+$ mix test.watch
+
+# start the server
+$ iex -S mix phoenix.server
+
+```
+
+## Deployment
+
+Heroku based deploys:
+
+### Production
+```bash
+$ git remote add production https://git.heroku.com/cenatus-ltd.git
+
+$ git push production master
+```
 
 ## Learn more
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+### Project
+
+  * About Cenatus: http://cenatus.org/about
+
+### Tech
+
+  * Elixir: http://elixir-lang.org/install.html
+  * Phoenix: http://www.phoenixframework.org/

@@ -39,7 +39,8 @@ defmodule CenatusLtd.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:phoenix_haml, "~> 0.2.1"},
-     {:comeonin, "~> 2.0"}
+     {:comeonin, "~> 2.0"},
+     {:mix_test_watch, "~> 0.3", only: :dev, runtime: false}
    ]
   end
 
