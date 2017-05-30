@@ -12,7 +12,7 @@
     %link(rel="stylesheet" href='#{static_path(@conn, "/css/app.css")}')
 
   %body(class='#{CenatusLtd.PageView.handler_info @conn}')
-    .container
+    .container-fluid.cenatus
       %header.header
         .row
           .col-md-6.logo
@@ -61,5 +61,6 @@
               %li
                 = link "log out", to: session_path(@conn, :delete, @current_user), method: "delete"
 
+    %script(src='https://code.jquery.com/jquery-2.2.4.min.js')
     %script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js')
     %script(src='#{static_path(@conn, "/js/app.js")}')

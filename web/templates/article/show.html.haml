@@ -1,7 +1,7 @@
 .row
   .col-md-6
     %article.show
-      %image{src='#{@article.image_url}'}
+      %image{data-src='#{@article.image_url}' class='cld-responsive'}
   .col-md-6.related
     %h3.lp related articles
     %ul
@@ -30,3 +30,23 @@
         %a{href= '#{article_path(@conn, :edit, @article)}'}
           edit
     %br
+
+
+-# // EXPERIMENT
+-# .row
+-#   .col-md-12
+-#     %article.show
+-#       .pull-right.image
+-#         %image{data-src='#{@article.image_url}' class='cld-responsive'}
+-#
+-#       %h3.lp= @article.title
+-#       %h4.lp= @article.published_at |> formatted
+-#       .content.lp= @article.content |> as_html
+-#       - if length(@article.tags) > 0 do
+-#         %p.lp.nbm
+-#           Filed as:
+-#           = render_tags_as_links_from(@conn, @article.tags)
+-#       - if length(@article.tech_tags) > 0 do
+-#         %p.lp
+-#           Built using:
+-#           = render_tags_as_links_from(@conn, @article.tech_tags)

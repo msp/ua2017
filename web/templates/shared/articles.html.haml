@@ -8,7 +8,7 @@
       .hotspot
         %article.preview
           %a.link{href='#{article_path(@conn, :show, article)}'}
-            %image{src='#{article.image_url}'}
+            %image{data-src='#{article.image_url}' class='cld-responsive'}
           %h4.lp= article.title
           .summary.lp= article.summary |> as_html
           %div

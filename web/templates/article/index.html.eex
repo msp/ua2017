@@ -25,7 +25,7 @@
         <%= link "Delete", to: article_path(@conn, :delete, article), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
       </td>
     </tr>
-    <tr clasS="body">
+    <tr class="body">
       <td class="image">
         <img src='<%= article.image_url %>' />
       </td>

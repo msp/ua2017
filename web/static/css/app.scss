@@ -23,7 +23,12 @@ body {
   font-weight: 100;
 }
 
-.container {
+.container-fluid.cenatus {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.container, .container-fluid {
   h1, h2, h3, h4, h5 {
     font-weight: bold;
     color: $cenatus-blue;
@@ -101,6 +106,20 @@ table.articles {
 .articles {
   @include divider;
 }
+
+
+// EXPERIMENT
+article.show {
+  .image {
+    width: 50%;
+    margin: 0 0 20px 20px;
+  }
+
+  .content {
+    text-align: justify;
+  }
+}
+// END EXPERIMENT
 
 article.preview, article.show, main {
   h1, h2, h3, h4, .tag_page_title {
@@ -282,7 +301,6 @@ footer {
     }
   }
   article.preview img, article.show img{
-    width: 345px;
   }
 
   .meta aside {

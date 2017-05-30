@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $.cloudinary.responsive()
 
   // $('.hotspot').hover(
   //   function(event) {
