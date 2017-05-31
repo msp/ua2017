@@ -125,7 +125,7 @@ article.show {
   }
 
   .content {
-    text-align: justify;
+    // text-align: justify;
   }
 }
 // END EXPERIMENT
@@ -145,7 +145,6 @@ article.preview, article.show, main {
   }
 
   .summary, .content {
-    padding-bottom: 50px;
     padding-bottom: 50px;
     padding-right: 50px;
   }
@@ -287,7 +286,6 @@ footer {
 
 /* iPhone 6 Portrait */
 @media screen and (min-width : 375px) and (max-width : 667px) {
-
   header {
     .row {
       padding-top: 30px;
@@ -295,12 +293,18 @@ footer {
         height: 80px;
       }
       .category {
-        padding-top: 20px;
+        padding-top: 40px;
         padding-bottom: 20px;
-        height: 60px;
+        padding-left: 0px;
+        padding-right: 0px;
+        height: 80px;
+        // border: 1px solid red;
 
         a {
-            // font-size: 16px;
+            font-size: 17px;
+            // border: 1px solid blue;
+            margin-left: 0px;
+
         }
 
       }
@@ -309,22 +313,135 @@ footer {
       }
     }
   }
-  article.preview img, article.show img{
+
+  article.preview, article.show, main {
+    .summary, .content {
+      padding-bottom: 30px;
+      padding-right: 0px;
+    }
   }
 
   .meta aside {
-    padding-left: 50px;
+    padding-left: 20px;
   }
 
   footer {
     .row {
       .links {
+        margin-left: 10px;
+        margin-top: 40px;
         height: 40px;
         padding-bottom: 20px;
       }
     }
   }
 }
+
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  header {
+    .row {
+      padding-top: 30px;
+      .logo {
+        height: 120px;
+      }
+      .category {
+        padding-bottom: 20px;
+        height: 40px;
+        // border: 1px solid red;
+
+        a {
+        }
+
+      }
+      .category:first-of-type {
+        border: 0px;
+      }
+    }
+  }
+
+  article.preview, article.show, main {
+    .summary, .content {
+      padding-bottom: 50px;
+      padding-right: 0px;
+    }
+  }
+
+  .meta aside {
+    padding-left: 20px;
+  }
+
+  footer {
+    .row {
+      .links {
+        margin-left: 10px;
+        margin-top: 40px;
+        height: 40px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+/* ----------- iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  header {
+    .row {
+      padding-top: 30px;
+      .logo {
+        height: 120px;
+      }
+      .category {
+        padding-bottom: 20px;
+        height: 40px;
+        // border: 1px solid red;
+
+        a {
+        }
+
+      }
+      .category:first-of-type {
+        border: 0px;
+      }
+    }
+  }
+
+  article.preview, article.show, main {
+    .summary, .content {
+      padding-bottom: 40px;
+      padding-right: 0px;
+    }
+  }
+
+  .meta aside {
+    padding-left: 20px;
+  }
+
+  footer {
+    .row {
+      .links {
+        margin-left: 10px;
+        margin-top: 40px;
+        height: 40px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+}
+
+
 
 /* Effect 1: Brackets */
 .cl-effect-1 a::before,
