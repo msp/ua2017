@@ -17,7 +17,8 @@
         .row
           .col-md-6.logo
             %a{:href => "/"}
-              %img{:src => "/images/cenatus.png"}
+              -# %img{:src => "/images/cenatus-logo.svg"}
+              = render "cenatus-logo.html"
           .col-xs-4.col-md-2.category.cl-effect-1
             %a{:href => "/creative"} creative
           .col-xs-4.col-md-2.category.cl-effect-1
@@ -62,5 +63,5 @@
                 = link "log out", to: session_path(@conn, :delete, @current_user), method: "delete"
 
     %script(src='https://code.jquery.com/jquery-2.2.4.min.js')
-    %script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js')
+    %script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js')
     %script(src='#{static_path(@conn, "/js/app.js")}')

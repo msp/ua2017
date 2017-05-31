@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $.cloudinary.responsive()
 
+  const home = (window.location.pathname === "/");
   // $('.hotspot').hover(
   //   function(event) {
   //     console.log('enter');
@@ -21,16 +22,35 @@ $(document).ready(function() {
     });
   });
 
-  var tl = new TimelineLite();
+  const runAnimation = true;
 
-  tl.to('.home .container', 1, { opacity:1 })
-    .from(".home .header ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
-    .from(".home .logo ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.2)
-    .staggerFrom(".home .category ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
-    .from('.home .articles', 1, { opacity:0 })
-    .staggerFrom(".home .articles .preview", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
-    .from(".home .meta ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
-    .staggerFrom(".home .meta aside", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.2)
-    .from('.home footer', 1, { opacity:0 })
+  if (runAnimation) {
+    const tl = new TimelineLite({onComplete:startLogoAnimation});
+    const t2 = new TimelineMax({repeat:-1, repeatDelay:0.2, yoyo: true, paused: true});
 
+    function startLogoAnimation() {
+      t2.staggerTo(".logo-circle", 0.1, { cycle: { alpha: [0,1] }, scale:1, ease: Back.easeOut}, 0.1)
+        // .staggerTo(".logo-letter", 0.01, {cycle: { y: [0,100] }, autoAlpha:0, scale:1, ease: Back.easeOut }, 0.05)
+        .play();
+    }
+
+    if (home) {
+      tl.to('.home .cenatus', 1, { opacity:1 })
+        .from(".home .header ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
+        .from(".home .logo ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.2)
+        .staggerFrom(".logo-circle", 0.01, {autoAlpha:0, scale:1, ease: Back.easeOut}, 0.05)
+        .staggerFrom(".logo-letter", 0.01, {autoAlpha:0, scale:1, ease: Back.easeOut }, 0.1)
+        .staggerFrom(".home .category ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
+        .from('.articles', 0.1, { opacity:0 })
+        .staggerFrom(".articles .preview", 0.2, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
+        .from(".home .meta ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
+        .staggerFrom(".home .meta aside", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.2)
+        .from('.home footer', 1, { opacity:0 })
+
+
+    } else {
+      tl.from('.articles', 0.2, { opacity:0 })
+        .staggerFrom(".articles .preview", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
+    }
+  }
 });

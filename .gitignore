@@ -28,3 +28,8 @@ web/static/assets/images/creative.jpg
 web/static/assets/images/technology.jpg
 web/static/assets/images/production.jpg
 web/static/assets/images/matt.jpg
+cenatus-logo-bak.html.haml
+tmp-svg.html
+
+# DB dump
+latest.dump
