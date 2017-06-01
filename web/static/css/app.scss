@@ -225,10 +225,18 @@ article.preview, article.show, main {
   }
 }
 
+$related_padding: 20%;
+
 .related {
-  padding-top: 30px;
+  padding-top: 0px;
+  border: 0px solid red;
+
+  h2, h3, h4 {
+    padding-left: $related_padding - 8%;
+  }
   ul {
     list-style-type: square;
+    padding-left: $related_padding;
   }
 }
 
@@ -332,6 +340,11 @@ footer {
   .meta aside {
     padding-left: 20px;
   }
+
+  .related {
+    display: none;
+  }
+
   footer {
     .row {
       .links {
@@ -402,6 +415,10 @@ footer {
     padding-left: 20px;
   }
 
+  .related {
+    display: none;
+  }
+
   footer {
     .row {
       .links {
@@ -467,6 +484,10 @@ footer {
     padding-left: 20px;
   }
 
+  .related {
+    display: none;
+  }
+
   footer {
     .row {
       .links {
@@ -523,6 +544,10 @@ footer {
 
   .meta aside {
     padding-left: 20px;
+  }
+
+  .related {
+    display: none;
   }
 
   footer {

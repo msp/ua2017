@@ -38,19 +38,32 @@ defmodule CenatusLtd.ArticleController do
       |> Repo.preload(:tags)
       |> Repo.preload(:tech_tags)
 
-    # TODO - some smarter SQL
-    # TODO - remove self article
-    # TODO - why can't we render link from ID?
-    related_tags
-      = Enum.at(main_article.tags, 0)
-      |> Repo.preload(:articles)
+    tag_ids = Enum.map(main_article.tags, fn(t) -> t.id end)
+    tech_tag_ids = Enum.map(main_article.tech_tags, fn(t) -> t.id end)
+
+    tags_query =
+      from article in Article,
+      join: tag in assoc(article, :tags),
+      where: tag.id in ^tag_ids,
+      distinct: article.title
+
+    tech_tags_query =
+      from article in Article,
+      join: tag in assoc(article, :tech_tags),
+      where: tag.id in ^tech_tag_ids,
+      distinct: article.title
+
+    candidates =
+      Repo.all(tags_query) ++ Repo.all(tech_tags_query)
 
     related_articles =
-      if related_tags do
-        Enum.reject(related_tags.articles, fn(a) -> a.id == main_article.id end)
+      if candidates do
+        Enum.reject(candidates, fn(a) -> a.id == main_article.id end)
+        |> Enum.uniq_by(fn(c) -> c.id end)
       else
         []
       end
+
 
     render(conn, "show.html", article: main_article, related: related_articles)
   end
