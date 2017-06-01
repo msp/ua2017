@@ -36,6 +36,11 @@ defmodule CenatusLtd.PageController do
     render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 
+  def about(conn, _params) do
+    articles = get_articles_tagged_by("about")
+    render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
+  end
+
   def admin(conn, _params) do
     render(conn, "admin.html")
   end
