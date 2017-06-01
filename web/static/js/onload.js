@@ -22,7 +22,7 @@ $(document).ready(function() {
     });
   });
 
-  const runAnimation = true;
+  const runAnimation = (mix_env != 'dev');
 
   if (runAnimation) {
     const tl = new TimelineLite({onComplete:startLogoAnimation});
