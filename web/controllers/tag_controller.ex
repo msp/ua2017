@@ -6,7 +6,10 @@ defmodule CenatusLtd.TagController do
   plug :load_all_tags
 
   def index(conn, _params) do
-    tags = Repo.all(Tag)
+    tags = Repo.all(from tag in Tag, order_by: [asc: tag.name])
+    |> Repo.preload(:articles)
+    |> Repo.preload(:tech_articles)
+
     render(conn, "index.html", tags: tags)
   end
 

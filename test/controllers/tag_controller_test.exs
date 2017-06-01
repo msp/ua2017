@@ -40,8 +40,10 @@ defmodule CenatusLtd.TagControllerTest do
     test "updates chosen resource and redirects when data is valid", %{conn: conn} do
       tag = Repo.insert! %Tag{}
       conn = put conn, tag_path(conn, :update, tag), tag: @valid_attrs
-      assert redirected_to(conn) == tag_path(conn, :show, tag)
-      assert Repo.get_by(Tag, @valid_attrs)
+
+      updated_tag = Repo.get_by(Tag, @valid_attrs)
+      assert updated_tag
+      assert redirected_to(conn) == tag_path(conn, :show, updated_tag)
     end
 
     test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
@@ -70,7 +72,7 @@ defmodule CenatusLtd.TagControllerTest do
 
     test "renders page not found when id is nonexistent", %{conn: conn} do
       assert_error_sent 404, fn ->
-        get conn, tag_path(conn, :show, -1)
+        get conn, tag_path(conn, :show, 9999999)
       end
     end
   end

@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Article count</th>
 
       <th></th>
     </tr>
@@ -12,6 +13,7 @@
 <%= for tag <- @tags do %>
     <tr>
       <td><%= tag.name %></td>
+      <td><%= article_count_for(tag) %></td>
 
       <td class="text-right">
         <%= link "Show", to: tag_path(@conn, :show, tag), class: "btn btn-default btn-xs" %>

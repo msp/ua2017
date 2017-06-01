@@ -43,8 +43,12 @@ defmodule CenatusLtd.ArticleControllerTest do
     test "updates chosen resource and redirects when data is valid", %{conn: conn} do
       article = Repo.insert! %Article{}
       conn = put conn, article_path(conn, :update, article), article: @valid_attrs
-      assert redirected_to(conn) == article_path(conn, :show, article)
-      assert Repo.get_by(Article, @valid_attrs)
+
+      updated_article = Repo.get_by(Article, @valid_attrs)
+
+      assert updated_article
+      assert redirected_to(conn) == article_path(conn, :show, updated_article)
+
     end
 
     test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
@@ -80,7 +84,7 @@ defmodule CenatusLtd.ArticleControllerTest do
 
     test "renders page not found when id is nonexistent", %{conn: conn} do
       assert_error_sent 404, fn ->
-        get conn, article_path(conn, :show, -1)
+        get conn, article_path(conn, :show, 9999999)
       end
     end
   end

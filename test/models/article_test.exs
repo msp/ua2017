@@ -65,4 +65,18 @@ defmodule CenatusLtd.ArticleTest do
       assert Enum.map(article.tech_tags, fn tag -> tag.name end) == ["elixir", "elm", "js"]
     end
   end
+
+  describe "slugs" do
+    test "slug created/updated" do
+        {:ok, article} = Article.changeset(%Article{}, Map.merge(@valid_attrs, %{title: "original title"}))
+        |> Repo.insert
+
+      assert article.slug == "original-title"
+
+        {:ok, updated_article} = Article.changeset(article, Map.merge(@valid_attrs, %{title: "updated title"}))
+        |> Repo.update
+
+      assert updated_article.slug == "updated-title"
+    end
+  end
 end
