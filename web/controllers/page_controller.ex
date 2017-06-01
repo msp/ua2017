@@ -56,6 +56,25 @@ defmodule CenatusLtd.PageController do
   end
 
   defp load_all_tags(conn, _) do
-    assign(conn, :tags, Repo.all(Tag))
+    tags_query =
+      from tag in Tag,
+      join: a in assoc(tag, :articles),
+      group_by: [tag.name, tag.id],
+      having: count(tag.id) >= 1,
+      select: [tag]
+
+    tech_tags_query =
+      from tag in Tag,
+      join: ta in assoc(tag, :tech_articles),
+      group_by: [tag.name, tag.id],
+      having: count(tag.id) >= 1,
+      select: [tag]
+
+    results = Repo.all(tags_query) ++ Repo.all(tech_tags_query)
+
+    tags =
+      Enum.map(results, fn(res) -> Enum.at(res, 0) end)
+
+    assign(conn, :tags, tags)
   end
 end
