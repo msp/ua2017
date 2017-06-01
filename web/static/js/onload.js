@@ -51,6 +51,9 @@ $(document).ready(function() {
     } else {
       tl.from('.articles', 0.2, { opacity:0 })
         .staggerFrom(".articles .preview", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
+        .from(".home .meta ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
+        .staggerFrom(".home .meta aside", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.2)
+        .from('.home footer', 1, { opacity:0 })
     }
   }
 });
