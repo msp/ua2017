@@ -27,7 +27,6 @@ defmodule CenatusLtd.Router do
 
     get "/people", PageController, :people
     get "/about", PageController, :about
-    get "/about-us", PageController, :about
 
     resources "/articles", ArticleController, only: [:show]
     resources "/tags", TagController, only: [:show]

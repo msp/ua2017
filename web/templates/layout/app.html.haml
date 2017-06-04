@@ -34,24 +34,25 @@
       %footer
         .row
           .col-xs-12.col-md-8.address
-            %address
-              cenatus ltd
-              %br
-              458 hackney road
-              %br
-              london
-              %br
-              e2 9eg
+            %a{href: "http://maps.google.co.uk/maps?q=E29EG&oe=utf-8&client=firefox-a&ie=UTF8&hq=&hnear=London+E29EG,+United+Kingdom&gl=uk&ei=XT8ES_aiNIjd-Qbg0NitCA&ved=0CAgQ8gEwAA&ll=51.532682,-0.058944&spn=0.006981,0.01929&z=16", target: "_blank"}
+              %address
+                cenatus ltd
+                %br
+                458 hackney road
+                %br
+                london
+                %br
+                e2 9eg
           .col-xs-12.col-md-4.links
             %ul
               %li
-                %a{:href => "/about-us"} about us
+                %a{:href => "/about"} about
               %li |
               %li
-                %a{:href => "/contact"} contact
+                %a{:href => "/articles/9-contact"} contact
               %li |
               %li
-                %a{:href => "/subscribe"} subscribe
+                %a{:href => "/https://madmimi.com/signups/subscribe/27129"} subscribe
         .row
           - if @current_user do
             %ul

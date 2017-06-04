@@ -119,23 +119,6 @@ table.articles {
     width: 30%;
   }
 }
-.articles {
-  @include divider;
-}
-
-
-// EXPERIMENT
-article.show {
-  .image {
-    width: 50%;
-    margin: 0 0 20px 20px;
-  }
-
-  .content {
-    // text-align: justify;
-  }
-}
-// END EXPERIMENT
 
 article.preview, article.show, main {
   h1, h2, h3, h4, .tag_page_title {
@@ -149,6 +132,7 @@ article.preview, article.show, main {
 
   img{
     width: 100%;
+    // border: 1px dashed #ccc;
   }
 
   .summary, .content {
@@ -159,6 +143,7 @@ article.preview, article.show, main {
 
 
 .meta {
+  @include divider-top;
   font-size: $cenatus-font-size - 2;
   line-height: $cenatus-line-height - 5;
 
@@ -181,16 +166,21 @@ article.preview, article.show, main {
     }
   }
 
-  aside.tags {
+.tags, .tech_tags {
     li {
       display: inline-block;
     }
   }
-
-  .twitter {
-    border: 0px solid red;
-  }
 }
+
+.tags .tag:before, .tech_tags .tag:before {
+  content: ", "
+}
+
+.tags .tag:first-of-type:before, .tech_tags .tag:first-of-type:before {
+  content: ""
+}
+
 
 .overlay {
   top: 0px;
@@ -243,14 +233,6 @@ $related_padding: 20%;
 .debug {
   border: 1px solid red;
   color: blue;
-}
-
-.tag:before {
-  content: ", "
-}
-
-.tag:first-of-type:before {
-  content: ""
 }
 
 textarea#article_content.form-control, textarea#article_summary.form-control {
