@@ -1,18 +1,14 @@
 = render_page_title(@conn)
-.row.articles
-  - for article <- @articles do
-    .col-md-6
-      -# .overlay{id='article-#{article.id}'}
-      -#   %a.link{href='#{article_path(@conn, :show, article)}'}
-      -#     view article
-      .hotspot
-        %article.preview
-          %a.link{href='#{article_path(@conn, :show, article)}'}
-            %image{data-src='#{article.image_url}' class='cld-responsive'}
-          %h4.lp= article.title
-          .summary.lp= article.summary |> as_html
-          %div
-            %a{href= '#{article_path(@conn, :edit, article)}'} edit
+- for {article, index} <- Enum.with_index(@articles) do
+
+  - if rem(index, 2) == 0 do
+    <div class="row articles">
+
+  = render "article_preview.html", article: article, conn: @conn
+
+  - if rem(index, 2) != 0 || (length(@articles) -1) == index do
+    </div>
+
 .row.meta
   .col-md-4
     %aside.twitter.lp
