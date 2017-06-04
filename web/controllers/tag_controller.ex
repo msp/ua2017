@@ -3,7 +3,7 @@ defmodule CenatusLtd.TagController do
 
   alias CenatusLtd.Tag
 
-  plug :load_all_tags
+  plug CenatusLtd.LoadAllTags
 
   def index(conn, _params) do
     tags = Repo.all(from tag in Tag, order_by: [asc: tag.name])
@@ -69,9 +69,5 @@ defmodule CenatusLtd.TagController do
     conn
     |> put_flash(:info, "Tag deleted successfully.")
     |> redirect(to: tag_path(conn, :index))
-  end
-
-  defp load_all_tags(conn, _) do
-    assign(conn, :tags, Repo.all(Tag))
   end
 end
