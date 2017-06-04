@@ -48,6 +48,10 @@ body {
   padding-left: 20px;
 }
 
+.tp {
+  padding-top: 20px;
+}
+
 .nbm {
   margin-bottom: 0px;
 }
@@ -144,6 +148,20 @@ article.preview, article.show, main {
 .published {
   font-size: smaller;
   margin-top: 40px;
+}
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
 
 
@@ -258,7 +276,7 @@ footer {
     }
 
     .links {
-      padding-left: 20px;
+      padding-top: 10px;
     }
 
     .address {
