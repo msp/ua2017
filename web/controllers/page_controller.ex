@@ -70,11 +70,13 @@ defmodule CenatusLtd.PageController do
       having: count(tag.id) >= 1,
       select: [tag]
 
-    results = Repo.all(tags_query) ++ Repo.all(tech_tags_query)
-
     tags =
-      Enum.map(results, fn(res) -> Enum.at(res, 0) end)
+      Enum.map(Repo.all(tags_query), fn(res) -> Enum.at(res, 0) end)
 
-    assign(conn, :tags, tags)
+    tech_tags =
+      Enum.map(Repo.all(tech_tags_query), fn(res) -> Enum.at(res, 0) end)
+
+    conn = assign(conn, :tags, tags)
+    assign(conn, :tech_tags, tech_tags)
   end
 end

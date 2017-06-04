@@ -24,9 +24,14 @@
           %a{href= '/'}
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   .col-md-4
-    %aside.tags
+    %aside
       %h4 meta
-      = CenatusLtd.ArticleView.render_tags_as_links_from(@conn, @tags)
+      .tags
+        = CenatusLtd.ArticleView.render_tags_as_links_from(@conn, @tags)
+      %br
+      %br
+      .tech_tags
+        = CenatusLtd.ArticleView.render_tags_as_links_from(@conn, @tech_tags)
 
   .col-md-4
     %aside.last-fm
