@@ -141,6 +141,11 @@ article.preview, article.show, main {
   }
 }
 
+.published {
+  font-size: smaller;
+  margin-top: 40px;
+}
+
 
 .meta {
   @include divider-top;
