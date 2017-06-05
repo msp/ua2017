@@ -56,4 +56,11 @@ $(document).ready(function() {
         .from('.home footer', 1, { opacity:0 })
     }
   }
+
+  const tweets = $('.tweet');
+  const tweetLink = "<a href='http://twitter.com/mattspendlove' target='_blank'><span class='glyphicon glyphicon-new-window'></span></a>";
+
+  $.each(tweets, function( index, tweet ) {
+    $(tweet).html(twitter.autoLink(twitter.htmlEscape($(tweet).text())) + tweetLink);
+  });
 });

@@ -20,5 +20,7 @@ import "phoenix_html"
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
+const twitter = require('twitter-text')
+window.twitter = twitter;
 // import socket from "./socket"
 import onload from "./onload"

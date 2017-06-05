@@ -68,6 +68,6 @@ exports.config = {
 
   npm: {
     enabled: true
-    // ,whitelist: ["jquery", "cloudinary-jquery"]
+    ,whitelist: ["twitter-text"]
   }
 };
