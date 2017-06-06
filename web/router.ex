@@ -32,6 +32,7 @@ defmodule CenatusLtd.Router do
     resources "/tags", TagController, only: [:show]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
 
+    get "/sitemaps/sitemap1.xml", Redirector, external: "https://s3.eu-central-1.amazonaws.com/cenatus/sitemap1.xml"
 
     # Archive redirects
     get "/projects", Redirector, to: "/"

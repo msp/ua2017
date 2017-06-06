@@ -5,7 +5,7 @@ defmodule CenatusLtd.Sitemaps do
 
   use Sitemap,
     host: "http://#{Application.get_env(:cenatus_ltd, CenatusLtd.Endpoint)[:url][:host]}",
-    files_path: "priv/static/sitemaps/",
+    files_path: System.tmp_dir,
     public_path: "sitemaps/",
     compress: false
 

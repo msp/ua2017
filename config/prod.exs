@@ -28,6 +28,12 @@ config :cenatus_ltd, CenatusLtd.Repo,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :ex_aws,
+  access_key_id: [{:system, "AWS_ACCESS_KEY_ID"}, :instance_role],
+  secret_access_key: [{:system, "AWS_SECRET_ACCESS_KEY"}, :instance_role],
+  region: "eu-central-1",
+  debug_requests: true
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

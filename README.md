@@ -45,7 +45,7 @@ $ git push production master
 
 ### Sitemap
 ```bash
-mix do app.start, sitemap.generate
+AWS_ACCESS_KEY_ID=123 AWS_SECRET_ACCESS_KEY=asdf POOL_SIZE=2 mix do app.start, sitemap.generate
 ```
 
 ## Learn more
