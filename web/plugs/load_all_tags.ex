@@ -2,13 +2,12 @@ defmodule CenatusLtd.LoadAllTags do
   import Plug.Conn
   import Ecto.Query
 
-  alias CenatusLtd.Article
   alias CenatusLtd.Tag
   alias CenatusLtd.Repo
 
   def init(default), do: default
 
-  def call(conn, default) do
+  def call(conn, _default) do
 
     tags_query =
       from tag in Tag,

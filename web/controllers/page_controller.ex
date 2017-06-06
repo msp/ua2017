@@ -4,7 +4,6 @@ defmodule CenatusLtd.PageController do
   require Logger
 
   alias CenatusLtd.Article
-  alias CenatusLtd.Tag
 
   plug CenatusLtd.LoadAllTags
 
