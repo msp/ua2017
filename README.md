@@ -43,6 +43,11 @@ $ git remote add production https://git.heroku.com/cenatus-ltd.git
 $ git push production master
 ```
 
+### Sitemap
+```bash
+mix do app.start, sitemap.generate
+```
+
 ## Learn more
 
 ### Project

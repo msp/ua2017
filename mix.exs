@@ -18,7 +18,7 @@ defmodule CenatusLtd.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {CenatusLtd, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+     applications: [:sitemap, :phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex, :comeonin]]
   end
 
@@ -42,7 +42,8 @@ defmodule CenatusLtd.Mixfile do
      {:comeonin, "~> 2.0"},
      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
      {:earmark, "~> 1.2.2"},
-     {:timex, "~> 3.0"}
+     {:timex, "~> 3.0"},
+     {:sitemap, "~> 0.9"}
    ]
   end
 
