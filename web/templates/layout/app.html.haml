@@ -6,10 +6,13 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1")
     %meta(name="description" content="")
     %meta(name="author" content="")
-
+    %meta(name="Keywords" content="Netaudio, New Music Plus, Serpentine Gallery, conference, digital, evaluation, event, festival, infrasonics, installation, interactive, internship, record label, technology, online media, people, production, sharing, sound design, web design, hackney, matt spendlove, andi studer")
+    %meta(name="Description" content="Cenatus promotes new music, develops artists and enables wider public use of new digital technologies for creativity. Cenatus works in the fields of software design and creative production including live music events, sound art installations, online media projects. Cenatus produced Netaudio London, the UK’s foremost festival dedicated to the musical sounds of the Internet which ran in 2006, 2008 and 2011. Cenatus was originally set up as a not-for-profit membership organisation in 2005 and incorporated as a community interest company in October 2009 by Matt Spendlove and Andi Studer who lead the company as directors and were supported by a network of associates. Cenatus grew into a creative technology company in 2012")
+    %meta(name="google-site-verification" content="TY-DmtIL7_4UM5nAjoOUFUjKXl6w_IAWlijEhvyxQ0Y")
     %title Cenatus
     %link(href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet")
     %link(rel="stylesheet" href='#{static_path(@conn, "/css/app.css")}')
+
 
   %body(class='#{CenatusLtd.PageView.handler_info @conn}')
     .container-fluid.cenatus
@@ -60,3 +63,13 @@
       = raw("const mix_env = '#{Mix.env}';")
 
     %script(src='#{static_path(@conn, "/js/app.js")}')
+
+    %script(type="text/javascript")
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+    %script(type="text/javascript")
+      try {
+      var pageTracker = _gat._getTracker("UA-2601863-3");
+      pageTracker._trackPageview();
+      } catch(err) {}
