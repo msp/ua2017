@@ -137,6 +137,10 @@ table.articles {
   }
 }
 
+main, header, footer {
+  visibility: hidden;
+}
+
 article.preview, article.show, main {
   h1, h2, h3, h4, .tag_page_title {
     padding-top: 20px;

@@ -24,6 +24,10 @@ $(document).ready(function() {
 
   const runAnimation = (mix_env != 'dev');
 
+  TweenLite.set("header", {visibility:"visible"});
+  TweenLite.set("main",   {visibility:"visible"});
+  TweenLite.set("footer", {visibility:"visible"});
+
   if (runAnimation) {
     const tl = new TimelineLite({onComplete:startLogoAnimation});
     const t2 = new TimelineMax({repeat:-1, repeatDelay:0.2, yoyo: true, paused: true});
@@ -50,10 +54,11 @@ $(document).ready(function() {
 
     } else {
       tl.from('.articles', 0.2, { opacity:0 })
+        .from("header ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
         .staggerFrom(".articles .preview", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
-        .from(".home .meta ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
-        .staggerFrom(".home .meta aside", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.2)
-        .from('.home footer', 1, { opacity:0 })
+        .from(".meta ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
+        .staggerFrom(".meta aside", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.2)
+        .from('footer', 1, { opacity:0 })
     }
   }
 
