@@ -109,6 +109,19 @@ header {
   }
 }
 
+// FF only SVG sizing :/
+@-moz-document url-prefix() {
+  header {
+    .row {
+      .logo {
+        svg {
+          border: 0px solid purple;
+          width: 60%;
+        }
+      }
+    }
+  }
+}
 
 table.articles {
   tr.heading {
@@ -409,6 +422,10 @@ footer {
       padding-top: 30px;
       .logo {
         height: 100px;
+        svg {
+          width: 110%;
+          margin: 0 auto;
+        }
       }
       .category {
         padding-top: 40px;
@@ -464,7 +481,7 @@ footer {
     .row {
       .logo {
         svg {
-          width: 60%;
+          width: 80%;
           margin: 0 auto;
         }
 
@@ -539,10 +556,11 @@ footer {
     .row {
       padding-top: 30px;
       .logo {
-        // border: 1px solid red;
+        border: 0px solid red;
+        height: 160px;
         svg {
-          // border: 1px solid green;
-          width: 50%;
+          border: 0px solid green;
+          width: 60%;
           // margin-left: -5%;
           margin: 0 auto;
         }
