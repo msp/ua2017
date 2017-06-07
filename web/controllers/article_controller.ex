@@ -60,6 +60,7 @@ defmodule CenatusLtd.ArticleController do
       if candidates do
         Enum.reject(candidates, fn(a) -> a.id == main_article.id end)
         |> Enum.uniq_by(fn(c) -> c.id end)
+        |> Enum.take(10)
       else
         []
       end
