@@ -37,6 +37,8 @@ defmodule CenatusLtd.Router do
     # Archive redirects
     get "/projects", Redirector, to: "/"
     get "/projects/2", Redirector, to: "/articles/1-sam-cafe-oto-commission"
+    get "/projects/8", Redirector, external: "https://archive.cenatus.org/production/sonic-ecosystem-by-ollie-bown/"
+    # get "/projects/infrasonics/", Redirector, to: "???"
     get "/web-design", Redirector, to: "/technology"
 
     get "/production/netaudio06-london", Redirector, to: "/articles/3-netaudio-london"
