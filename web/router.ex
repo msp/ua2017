@@ -49,6 +49,7 @@ defmodule CenatusLtd.Router do
     get "/search/by-tag/MusicTechnology", Redirector, to: "/technology"
 
     get "/people/matt-spendlove", Redirector, to: "/articles/4-matt-spendlove"
+    get "/web-design/freelance/matt-spendlove/", Redirector, to: "/articles/8-freelance-creative-technologist"
     get "/people/andi-studer", Redirector, external: "https://archive.cenatus.org/people/andi-studer/"
     get "/people/jenna-jones", Redirector, external: "https://archive.cenatus.org/people/jenna-jones/"
     get "/people/christoph-guttandin", Redirector, external: "https://archive.cenatus.org/people/christoph-guttandin/"
