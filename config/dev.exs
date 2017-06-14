@@ -51,3 +51,5 @@ config :ex_aws, :s3,
   scheme: "http://",
   host: "localhost:4567",
   port: 4567
+
+import_config "dev.secret.exs"

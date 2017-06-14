@@ -6,6 +6,7 @@ defmodule CenatusLtd.PageController do
   alias CenatusLtd.Article
 
   plug CenatusLtd.LoadAllTags
+  plug :load_tweets
 
   def home(conn, _params) do
     articles = Repo.all(from article in Article,
@@ -56,5 +57,9 @@ defmodule CenatusLtd.PageController do
       where: t.name in ^[tag_name],
       order_by: [desc: a.published_at]
     )
+  end
+
+  defp load_tweets(conn, _options) do
+    assign(conn, :tweets, CenatusLtd.Periodically.tweets)
   end
 end

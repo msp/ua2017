@@ -28,11 +28,20 @@ config :cenatus_ltd, CenatusLtd.Repo,
 # Do not print debug messages in production
 config :logger, level: :info
 
+# AWS
 config :ex_aws,
   access_key_id: [{:system, "AWS_ACCESS_KEY_ID"}, :instance_role],
   secret_access_key: [{:system, "AWS_SECRET_ACCESS_KEY"}, :instance_role],
   region: "eu-central-1",
   debug_requests: true
+
+# Twitter App
+config :extwitter, :oauth, [
+   consumer_key: System.get_env("CONSUMER_KEY"),
+   consumer_secret: System.get_env("CONSUMER_SECRET"),
+   access_token: System.get_env("ACCESS_TOKEN"),
+   access_token_secret: System.get_env("ACCESS_TOKEN_SECRET")
+]
 
 # ## SSL Support
 #

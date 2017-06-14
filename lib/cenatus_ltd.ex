@@ -14,6 +14,7 @@ defmodule CenatusLtd do
       supervisor(CenatusLtd.Endpoint, []),
       # Start your own worker by calling: CenatusLtd.Worker.start_link(arg1, arg2, arg3)
       # worker(CenatusLtd.Worker, [arg1, arg2, arg3]),
+      worker(CenatusLtd.Periodically, [%{}])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

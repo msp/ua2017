@@ -16,3 +16,11 @@ config :cenatus_ltd, CenatusLtd.Repo,
   database: "cenatus_ltd_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Twitter App
+config :extwitter, :oauth, [
+   consumer_key: "foo",
+   consumer_secret: "bar",
+   access_token: "baz",
+   access_token_secret: "qux"
+]

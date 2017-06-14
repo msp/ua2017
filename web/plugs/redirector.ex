@@ -33,7 +33,6 @@ defmodule CenatusLtd.Redirector do
 
   @spec merge_query_string(URI.t, Plug.Conn.t) :: URI.t
   defp merge_query_string(%URI{query: destination} = destination_uri, %Plug.Conn{query_string: source}) do
-    IO.inspect destination_uri
     merged_query = Map.merge(
       URI.decode_query(destination || ""),
       URI.decode_query(source)
