@@ -560,19 +560,16 @@ footer {
       padding-top: 30px;
       .logo {
         border: 0px solid red;
-        height: 160px;
+        height: 140px;
+        margin-bottom: 40px;
         svg {
-          border: 0px solid green;
-          width: 60%;
-          // margin-left: -5%;
-          margin: 0 auto;
+          width: 110%
         }
       }
       .category {
         padding-bottom: 20px;
         height: 40px;
         // border: 1px solid red;
-
         a {
         }
 
@@ -620,14 +617,15 @@ footer {
   header {
     .row {
       .logo {
-        // border: 1px solid red;
+        border: 0px solid red;
         svg {
           // border: 1px solid green;
           width: 100%;
         }
       }
       .category {
-        padding-top: 50px;
+        border: 0px solid green;
+        padding-top: 75px;
         a {
         }
       }
