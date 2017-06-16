@@ -214,6 +214,22 @@ article.preview, article.show, main {
       }
     }
   }
+  .last-fm {
+    .track {
+      .glyphicon {
+        font-size: smaller;
+        color: #ccc;
+      }
+      a {
+        max-width: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        vertical-align: bottom;
+      }
+    }
+  }
 
   aside {
     padding-top: 20px;

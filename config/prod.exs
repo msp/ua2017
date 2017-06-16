@@ -43,6 +43,11 @@ config :extwitter, :oauth, [
    access_token_secret: System.get_env("ACCESS_TOKEN_SECRET")
 ]
 
+config :elixirfm,
+   api_key: System.get_env("LASTFM_API_KEY"),
+   secret_key: System.get_env("LASTFM_SECRET_KEY")
+
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

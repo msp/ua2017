@@ -19,7 +19,7 @@ defmodule CenatusLtd.Mixfile do
   def application do
     [mod: {CenatusLtd, []},
      applications: [:sitemap, :phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin, :ex_aws, :hackney, :poison, :extwitter]]
+                    :phoenix_ecto, :postgrex, :comeonin, :ex_aws, :hackney, :poison, :extwitter, :elixirfm]]
   end
 
   # Specifies which paths to compile per environment.
@@ -45,9 +45,11 @@ defmodule CenatusLtd.Mixfile do
      {:timex, "~> 3.0"},
      {:sitemap, "~> 0.9"},
      {:ex_aws, "~> 1.0"},
-     {:poison, "~> 2.0"},
-     {:hackney, "~> 1.6"},
-     {:extwitter, "~> 0.8"}
+     {:poison, "~> 2.0", override: true},
+    #  {:httpoison, "0.0.0", override: true},
+     {:hackney, "~> 1.6", override: true},
+     {:extwitter, "~> 0.8"},
+     {:elixirfm, "~> 0.0.10"}
    ]
   end
 

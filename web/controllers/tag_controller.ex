@@ -4,7 +4,7 @@ defmodule CenatusLtd.TagController do
   alias CenatusLtd.Tag
 
   plug CenatusLtd.LoadAllTags
-  plug :load_tweets
+  plug :load_periodic
 
   def index(conn, _params) do
     tags = Repo.all(from tag in Tag, order_by: [asc: tag.name])
@@ -72,7 +72,8 @@ defmodule CenatusLtd.TagController do
     |> redirect(to: tag_path(conn, :index))
   end
 
-  defp load_tweets(conn, _options) do
-    assign(conn, :tweets, CenatusLtd.Periodically.tweets)
+  defp load_periodic(conn, _options) do
+    conn = assign(conn, :tweets, CenatusLtd.Periodically.tweets)
+    assign(conn, :tracks, CenatusLtd.Periodically.tracks)
   end
 end

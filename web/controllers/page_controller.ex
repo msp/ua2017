@@ -6,7 +6,7 @@ defmodule CenatusLtd.PageController do
   alias CenatusLtd.Article
 
   plug CenatusLtd.LoadAllTags
-  plug :load_tweets
+  plug :load_periodic
 
   def home(conn, _params) do
     articles = Repo.all(from article in Article,
@@ -59,7 +59,8 @@ defmodule CenatusLtd.PageController do
     )
   end
 
-  defp load_tweets(conn, _options) do
-    assign(conn, :tweets, CenatusLtd.Periodically.tweets)
+  defp load_periodic(conn, _options) do
+    conn = assign(conn, :tweets, CenatusLtd.Periodically.tweets)
+    assign(conn, :tracks, CenatusLtd.Periodically.tracks)
   end
 end

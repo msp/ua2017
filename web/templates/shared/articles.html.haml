@@ -27,14 +27,4 @@
   .col-md-4
     %aside.last-fm
       %h4 heard
-      %ul
-        %li patten — Out the Coast
-        %li Wire — wire - pink flag - 09 - surgeon's girl
-        %li Sun Ra — Velvet
-        %li Terminal Cheesecake — Coils: Chapter II
-        %li Raymond Dijkstra — Dadaphon (Part One)
-        %li Spatial — Walking Off
-        %li Major Grave — Take Charge
-        %li Sole — Nothing Fell Apart (ft Sixtoo)
-        %li Devendra Banhart — At the Hop
-        %li Ghédalia Tazartès — Elie
+      = render "tracks.html", tracks: @tracks, conn: @conn
