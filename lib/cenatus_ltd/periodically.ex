@@ -63,6 +63,9 @@ defmodule CenatusLtd.Periodically do
       e in ExTwitter.Error ->
         IO.puts "Error getting latest tweets! #{inspect e}"
         []
+      se in Poison.SyntaxError ->
+        IO.puts "Error parsing latest tweets! #{inspect se}"
+        []
     end
   end
 
