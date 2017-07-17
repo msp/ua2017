@@ -9,25 +9,21 @@ defmodule CenatusLtd.PageController do
   plug :load_periodic
 
   def home(conn, _params) do
-    articles = Repo.all(from article in Article,
-                      limit: 2,
-                      order_by: [desc: article.published_at])
+    events(conn, _params)
+  end
 
+  def events(conn, _params) do
+    articles = get_articles_tagged_by("event")
     render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 
-  def creative(conn, _params) do
-    articles = get_articles_tagged_by("creative")
+  def artists(conn, _params) do
+    articles = get_articles_tagged_by("artist")
     render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 
-  def technology(conn, _params) do
-    articles = get_articles_tagged_by("technology")
-    render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
-  end
-
-  def production(conn, _params) do
-    articles = get_articles_tagged_by("production")
+  def info(conn, _params) do
+    articles = get_articles_tagged_by("info")
     render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 

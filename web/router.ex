@@ -20,9 +20,9 @@ defmodule CenatusLtd.Router do
     get "/", PageController, :home
     get "/login", SessionController, :new
 
-    get "/creative", PageController, :creative
-    get "/technology", PageController, :technology
-    get "/production", PageController, :production
+    get "/events", PageController, :events
+    get "/artists", PageController, :artists
+    get "/info", PageController, :info
 
     get "/people", PageController, :people
     get "/about", PageController, :about
