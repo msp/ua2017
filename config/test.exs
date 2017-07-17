@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :cenatus_ltd, CenatusLtd.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "cenatus-test",
-  database: "cenatus_ltd_test",
+  database: "ua2017_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 

@@ -37,7 +37,7 @@ config :phoenix, :stacktrace_depth, 20
 config :cenatus_ltd, CenatusLtd.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "cenatus",
-  database: "cenatus_ltd_dev",
+  database: "ua2017_dev",
   hostname: "localhost",
   pool_size: 10
 
