@@ -27,7 +27,7 @@
     </tr>
     <tr class="body">
       <td class="image">
-        <img src='<%= article.image_url %>' />
+        <img data-src='<%= article.image_url %>' class='cld-responsive' />
       </td>
       <td title="<%= article.summary %>" >
         <%= String.slice(article.summary, 0..250) %>
