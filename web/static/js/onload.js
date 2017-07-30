@@ -21,8 +21,9 @@ $(document).ready(function() {
     const t2 = new TimelineMax({repeat:-1, repeatDelay:0.2, yoyo: true, paused: true});
 
     function startLogoAnimation() {
-      t2.staggerTo(".logo-circle", 0.1, { cycle: { alpha: [0,1] }, scale:1, ease: Back.easeOut}, 0.1)
-        // .staggerTo(".logo-letter", 0.01, {cycle: { y: [0,100] }, autoAlpha:0, scale:1, ease: Back.easeOut }, 0.05)
+      t2.staggerTo(".cls-1", 0.1, { cycle: { alpha: [0,1] }, scale:1, ease: Back.easeOut}, 0.1)
+      t2.staggerTo(".cls-2", 0.1, { cycle: { alpha: [0,1] }, scale:1, ease: Back.easeOut}, 0.1)
+      t2.staggerTo(".cls-11", 0.1, { cycle: { alpha: [0,1] }, scale:1, ease: Back.easeOut}, 0.1)
         .play();
     }
 
@@ -30,8 +31,10 @@ $(document).ready(function() {
       tl.to('.home .cenatus', 1, { opacity:1 })
         .from(".home .header ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
         .from(".home .logo ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.2)
-        .staggerFrom(".logo-circle", 0.01, {autoAlpha:0, scale:1, ease: Back.easeOut}, 0.05)
-        .staggerFrom(".logo-letter", 0.01, {autoAlpha:0, scale:1, ease: Back.easeOut }, 0.1)
+        .staggerFrom(".cls-3", 0.01, {autoAlpha:0, scale:1, ease: Back.easeOut}, 0.03)
+        .staggerFrom(".cls-2", 0.01, {autoAlpha:0, scale:1, ease: Back.easeOut }, 0.01)
+        .staggerFrom(".cls-1", 0.01, {autoAlpha:0, scale:1, ease: Back.easeOut }, 0.02)
+        .staggerFrom(".cls-4", 0.01, {autoAlpha:0, scale:1, ease: Back.easeOut }, 0.03)
         .staggerFrom(".home .category ", 0.3, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
         .from('.articles', 0.1, { opacity:0 })
         .staggerFrom(".articles .preview", 0.2, { scale:0.8, opacity:0, delay:0.1, ease:Expo.easeOut, force3D:true}, 0.1)
