@@ -1,22 +1,23 @@
 /* This file is for your main application css. */
 
-$cenatus-blue: #6CA8DC;
+$cenatus-blue: #41bac1;
 $cenatus-light-grey: #FAFBFC;
 $cenatus-light-blue: #BAD5ED;
 $cenatus-font-color: #4A4A4A;
+$ua-red: #d20a11;
 $cenatus-font-size:16px;
 $cenatus-line-height: 30px;
 
 @mixin divider {
-  border-bottom: 1px dashed $cenatus-light-blue;
+  border-bottom: 1px dashed $cenatus-blue;
 }
 
 @mixin divider-top {
-  border-top: 1px dashed $cenatus-light-blue;
+  border-top: 1px dashed $cenatus-blue;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "calder-lc";
   font-size: $cenatus-font-size;
   line-height: $cenatus-line-height;
   color: $cenatus-font-color;
@@ -30,15 +31,27 @@ body {
 
 .container, .container-fluid {
   h1, h2, h3, h4, h5 {
+    font-family: "calder-dark";
     font-weight: bold;
-    color: $cenatus-blue;
+    color: $ua-red;
+    text-shadow: -2px -3px 1px $cenatus-blue;
+    a {
+      color: $ua-red;
+
+      &:hover {
+        color: $ua-red;
+        text-shadow: -2px -3px 5px $cenatus-blue;
+        text-decoration: none;
+      }
+    }
+
   }
 
   a {
     color: $cenatus-blue;
 
     &:hover {
-      color: #498CC8;
+      color: $ua-red;
     }
   }
 }
@@ -83,8 +96,8 @@ header {
       // border: 1px solid red;
       svg {
         // border: 1px solid green;
-        width: 130%;
-        margin-left: -5%;
+        width: 100%;
+        margin-left: 5%;
       }
       img {
         height: 110px;

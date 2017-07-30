@@ -2,18 +2,6 @@ $(document).ready(function() {
   $.cloudinary.responsive()
 
   const home = (window.location.pathname === "/");
-  // $('.hotspot').hover(
-  //   function(event) {
-  //     console.log('enter');
-  //     event.preventDefault();
-  //     $( this ).parents('.col-md-6').find('.overlay').fadeIn();
-  //   },
-  //   function(event) {
-  //     console.log('leave');
-  //     event.preventDefault();
-  //     $( this ).parents('.col-md-6').find('.overlay').fadeOut();
-  //   }
-  // );
 
   $('.hotspot').hover(function() {
     $( this ).parents('.col-md-6').find('.overlay').stop().fadeToggle('fast', function() {

@@ -64,6 +64,12 @@
 
     %script(src='#{static_path(@conn, "/js/app.js")}')
 
+    %script(src="https://use.typekit.net/hzy8pqx.js")
+    %script(type="text/javascript")
+      try {
+        Typekit.load({ async: true });
+      } catch(e){}
+
     %script(type="text/javascript")
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
       document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
