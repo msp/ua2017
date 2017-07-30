@@ -55,7 +55,7 @@ defmodule CenatusLtd.Periodically do
 
   defp get_recent_tweets() do
     try do
-      ExTwitter.user_timeline(screen_name: "mattspendlove", count: 5)
+      ExTwitter.user_timeline(screen_name: "Unconscious_A", count: 5)
     rescue
       ce in ExTwitter.ConnectionError ->
         IO.puts "Connection error getting latest tweets! #{inspect ce}"

@@ -8,8 +8,8 @@ defmodule CenatusLtd.PageController do
   plug CenatusLtd.LoadAllTags
   plug :load_periodic
 
-  def home(conn, _params) do
-    events(conn, _params)
+  def home(conn, params) do
+    events(conn, params)
   end
 
   def events(conn, _params) do
