@@ -3,7 +3,7 @@
     - for tweet <- @tweets do
       %li.tweet
         %span{class: "text"}
-          = tweet.text
+          = tweet.text |> Phoenix.HTML.raw
         %a{href: "https://twitter.com/statuses/#{tweet.id}" target: "_blank"}
           %span{class: "glyphicon glyphicon-new-window"}
 - else
