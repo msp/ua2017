@@ -13,9 +13,9 @@ defmodule CenatusLtd.Sitemaps do
 
   def generate do
     create do
-      add "/creative",    priority: 0.8, changefreq: "daily", expires: nil
-      add "/technology",  priority: 0.8, changefreq: "daily", expires: nil
-      add "/production",  priority: 0.8, changefreq: "daily", expires: nil
+      add "/events",      priority: 0.8, changefreq: "daily", expires: nil
+      add "/artists",     priority: 0.8, changefreq: "daily", expires: nil
+      add "/info",        priority: 0.8, changefreq: "daily", expires: nil
       add "/people",      priority: 0.8, changefreq: "daily", expires: nil
       add "/about",       priority: 0.8, changefreq: "daily", expires: nil
 

@@ -32,13 +32,12 @@ defmodule CenatusLtd.Router do
     resources "/tags", TagController, only: [:show]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
 
-    get "/sitemaps/sitemap1.xml", Redirector, external: "https://s3.eu-central-1.amazonaws.com/cenatus/sitemap1.xml"
+    get "/sitemaps/sitemap1.xml", Redirector, external: "https://s3-eu-west-1.amazonaws.com/ua2017/sitemap1.xml"
 
     # Archive redirects
     get "/projects", Redirector, to: "/"
     get "/projects/2", Redirector, to: "/articles/1-sam-cafe-oto-commission"
     get "/projects/8", Redirector, external: "https://archive.cenatus.org/production/sonic-ecosystem-by-ollie-bown/"
-    # get "/projects/infrasonics/", Redirector, to: "???"
     get "/web-design", Redirector, to: "/technology"
 
     get "/production/netaudio06-london", Redirector, to: "/articles/3-netaudio-london"
