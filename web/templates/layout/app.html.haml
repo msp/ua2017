@@ -45,9 +45,6 @@
               %li |
               %li
                 %a{:href => "/contact"} contact
-              -# %li |
-              -# %li
-              -#   %a{:href => "https://madmimi.com/signups/subscribe/27129", target: "_blank"} subscribe
         .row
           - if @current_user do
             %ul
@@ -69,13 +66,3 @@
       try {
         Typekit.load({ async: true });
       } catch(e){}
-
-    %script(type="text/javascript")
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-
-    %script(type="text/javascript")
-      try {
-      var pageTracker = _gat._getTracker("UA-2601863-3");
-      pageTracker._trackPageview();
-      } catch(err) {}

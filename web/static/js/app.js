@@ -24,3 +24,4 @@ const twitter = require('twitter-text')
 window.twitter = twitter;
 // import socket from "./socket"
 import onload from "./onload"
+import gaa from "./ga"
