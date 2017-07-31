@@ -1,14 +1,14 @@
-# Cenatus
+# Unconscious Archives Festival 2017
 
-http://cenatus.org
+https://ua2017.unconscious-archives.org
 
 
 ## Local setup
 
 ```bash
 # get src & libs
-$ git clone https://github.com/msp/cenatus-ltd.git
-$ cd cenatus-ltd && mix deps.get
+$ git clone https://github.com/msp/ua2017.git
+$ cd ua2017 && mix deps.get
 
 # create and migrate your database
 $ mix ecto.create && mix ecto.migrate
@@ -38,7 +38,7 @@ Heroku based deploys:
 
 ### Production
 ```bash
-$ git remote add production https://git.heroku.com/cenatus-ltd.git
+$ git remote add production https://git.heroku.com/ua2017.git
 
 $ git push production master
 ```
@@ -52,7 +52,7 @@ AWS_ACCESS_KEY_ID=123 AWS_SECRET_ACCESS_KEY=asdf POOL_SIZE=2 mix do app.start, s
 
 ### Project
 
-  * About Cenatus: http://cenatus.org/about
+  * About UA2017: https://ua2017.unconscious-archives.org/about
 
 ### Tech
 
