@@ -19,6 +19,14 @@ defmodule CenatusLtd.Sitemaps do
       add "/people",      priority: 0.8, changefreq: "daily", expires: nil
       add "/about",       priority: 0.8, changefreq: "daily", expires: nil
 
+      add "/compositional-constructs",      priority: 0.8, changefreq: "daily", expires: nil
+      add "/haptic-somatic",                priority: 0.8, changefreq: "daily", expires: nil
+      add "/narrativize",                   priority: 0.8, changefreq: "daily", expires: nil
+      add "/emotion-and-the-tech-no-body",  priority: 0.8, changefreq: "daily", expires: nil
+      add "/tickets",                       priority: 0.8, changefreq: "daily", expires: nil
+      add "/programme",                     priority: 0.8, changefreq: "daily", expires: nil
+      add "/sally-golding",                 priority: 0.8, changefreq: "daily", expires: nil
+
       Enum.map(Repo.all(Article), fn(article) ->
         add Helpers.article_path(Endpoint, :show, article), priority: 0.9, changefreq: "hourly", expires: nil
       end)

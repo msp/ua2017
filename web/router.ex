@@ -34,26 +34,14 @@ defmodule CenatusLtd.Router do
 
     get "/sitemaps/sitemap1.xml", Redirector, external: "https://s3-eu-west-1.amazonaws.com/ua2017/sitemap1.xml"
 
-    # Archive redirects
-    get "/projects", Redirector, to: "/"
-    get "/projects/2", Redirector, to: "/articles/1-sam-cafe-oto-commission"
-    get "/projects/8", Redirector, external: "https://archive.cenatus.org/production/sonic-ecosystem-by-ollie-bown/"
-    get "/web-design", Redirector, to: "/technology"
-
-    get "/production/netaudio06-london", Redirector, to: "/articles/3-netaudio-london"
-    get "/production/sam-cafe-oto-commission/", Redirector, to: "/articles/1-sam-cafe-oto-commission"
-
-    get "/search/by-tag/production", Redirector, to: "/production"
-    get "/search/by-tag/WebDesign", Redirector, to: "/technology"
-    get "/search/by-tag/MusicTechnology", Redirector, to: "/technology"
-
-    get "/people/matt-spendlove", Redirector, to: "/articles/4-matt-spendlove"
-    get "/web-design/freelance/matt-spendlove/", Redirector, to: "/articles/8-freelance-creative-technologist"
-    get "/people/andi-studer", Redirector, external: "https://archive.cenatus.org/people/andi-studer/"
-    get "/people/jenna-jones", Redirector, external: "https://archive.cenatus.org/people/jenna-jones/"
-    get "/people/christoph-guttandin", Redirector, external: "https://archive.cenatus.org/people/christoph-guttandin/"
-    get "/people/gregor-barth", Redirector, external: "https://archive.cenatus.org/people/gregor-barth/"
-    get "/people/luca-schiavoni", Redirector, external: "https://archive.cenatus.org/people/luca-schiavoni/"
+    # Convenience redirects
+    get "/compositional-constructs", Redirector, to: "/articles/2-compositional-constructs"
+    get "/haptic-somatic", Redirector, to: "/articles/1-haptic-somatic"
+    get "/narrativize", Redirector, to: "/articles/3-narrativize"
+    get "/emotion-and-the-tech-no-body", Redirector, to: "/articles/4-emotion-the-tech-no-body"
+    get "/tickets", Redirector, to: "/articles/43-unconscious-archives-festival-2017---tickets"
+    get "/programme", Redirector, to: "/articles/6-unconscious-archives-festival-2017---programme"
+    get "/sally-golding", Redirector, to: "/articles/42-sally-golding-director-producer-unconscious-archives"
   end
 
   scope "/admin", CenatusLtd do
