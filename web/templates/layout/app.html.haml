@@ -54,11 +54,12 @@
               %li
                 = link "log out", to: session_path(@conn, :delete, @current_user), method: "delete"
 
-    %script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+
     %script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js')
     %script(type='text/javascript')
       = raw("const mix_env = '#{Mix.env}';")
 
+    -# jQuery & Cloudinary are pre-pended in Brunch config
     %script(src='#{static_path(@conn, "/js/app.js")}')
 
     %script(src="https://use.typekit.net/hzy8pqx.js")
