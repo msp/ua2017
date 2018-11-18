@@ -3,12 +3,14 @@ defmodule CenatusLtd.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     event_article = insert_article(%{"title" => "event article", "tags" => "event"})
+    featured_article = insert_article(%{"title" => "featured article", "tags" => "featured"})
     artist_article = insert_article(%{"title" => "artist article"})
     info_article = insert_article(%{"title" => "info article"})
 
     conn = get conn, "/"
 
     assert String.contains?(conn.resp_body, event_article.title)
+    assert String.contains?(conn.resp_body, featured_article.title)
 
     refute String.contains?(conn.resp_body, artist_article.title)
     refute String.contains?(conn.resp_body, info_article.title)
