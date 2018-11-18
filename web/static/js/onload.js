@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $.cloudinary.responsive()
+  $.cloudinary.responsive();
 
   const home = (window.location.pathname === "/");
 

@@ -11,8 +11,8 @@
     %meta(name="google-site-verification" content="C2l1Yle4pDjoyFtGMC1MhqNlfpDHW0mytuDAsLTEu08")
     %title Unconscious Archives Festival 2017
     %link(href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet")
-    %link(rel="stylesheet" href='#{static_path(@conn, "/css/app.css")}')
-
+    %link(rel='stylesheet' href='#{static_path(@conn, "/css/app.css")}')
+    %link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css')
 
   %body(class='#{CenatusLtd.PageView.handler_info @conn}')
     .container-fluid.cenatus
@@ -61,6 +61,15 @@
 
     -# jQuery & Cloudinary are pre-pended in Brunch config
     %script(src='#{static_path(@conn, "/js/app.js")}')
+    %script(src='https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js')
+    %script(type="text/javascript")
+      $(function(){
+        $('.bxslider').bxSlider({
+          mode: 'fade',
+          captions: true
+        });
+      });
+
 
     %script(src="https://use.typekit.net/hzy8pqx.js")
     %script(type="text/javascript")
