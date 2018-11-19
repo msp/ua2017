@@ -5,15 +5,15 @@ defmodule CenatusLtd.PageController do
 
   alias CenatusLtd.Article
 
-  plug CenatusLtd.LoadAllTags
-  plug :load_periodic
+  plug(CenatusLtd.LoadAllTags)
+  plug(:load_periodic)
 
   def home(conn, params) do
     featured(conn, params)
   end
 
   def featured(conn, _params) do
-    articles = get_articles_tagged_by("featured") ++ get_articles_tagged_by("event")
+    articles = get_articles_tagged_by("featured")
     render(conn, CenatusLtd.SharedView, "articles.html", articles: articles)
   end
 
@@ -52,16 +52,17 @@ defmodule CenatusLtd.PageController do
 
   defp get_articles_tagged_by(tag_name) do
     Repo.all(
-      from a in Article,
-      join: t in assoc(a, :tags),
-      preload: [tags: t],
-      where: t.name in ^[tag_name],
-      order_by: [desc: a.published_at]
+      from(a in Article,
+        join: t in assoc(a, :tags),
+        preload: [tags: t],
+        where: t.name in ^[tag_name],
+        order_by: [desc: a.published_at]
+      )
     )
   end
 
   defp load_periodic(conn, _options) do
-    conn = assign(conn, :tweets, CenatusLtd.Periodically.tweets)
-    assign(conn, :tracks, CenatusLtd.Periodically.tracks)
+    conn = assign(conn, :tweets, CenatusLtd.Periodically.tweets())
+    assign(conn, :tracks, CenatusLtd.Periodically.tracks())
   end
 end
